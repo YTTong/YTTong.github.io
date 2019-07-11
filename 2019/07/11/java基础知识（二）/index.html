@@ -78,7 +78,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Java SE,">
 
 
 
@@ -89,14 +89,20 @@
 
 
 
+<meta name="description" content="The shortest way to do many things is to only one thing at a time.      秋招前复习些基础知识。">
+<meta name="keywords" content="Java SE">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java基础知识（二）">
 <meta property="og:url" content="http://ytsjh.top/2019/07/11/java基础知识（二）/index.html">
 <meta property="og:site_name" content="YTong">
+<meta property="og:description" content="The shortest way to do many things is to only one thing at a time.      秋招前复习些基础知识。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-11T03:05:16.501Z">
+<meta property="og:image" content="http://ytsjh.top/myimages/java%E5%9F%BA%E7%A1%802.jpg">
+<meta property="og:updated_time" content="2019-07-11T08:12:42.902Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java基础知识（二）">
+<meta name="twitter:description" content="The shortest way to do many things is to only one thing at a time.      秋招前复习些基础知识。">
+<meta name="twitter:image" content="http://ytsjh.top/myimages/java%E5%9F%BA%E7%A1%802.jpg">
 
 
 
@@ -323,6 +329,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java基础/" itemprop="url" rel="index">
+                    <span itemprop="name">Java基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -350,7 +378,354 @@
       
 
       
-        
+        <blockquote class="blockquote-center">The shortest way to do many things is to only one thing at a time.  </blockquote> 
+
+<p><img src="/myimages/java%E5%9F%BA%E7%A1%802.jpg" alt></p>
+<p>秋招前复习些基础知识。</p>
+<a id="more"></a> 
+
+<h3 id="面向对象的特征"><a href="#面向对象的特征" class="headerlink" title="面向对象的特征"></a>面向对象的特征</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(1)抽象： 抽象就是忽略一个主题中与当前目标无关的那些方面，以便更充分地注意与当前目标有关的方面。抽象并不打算了解全部问题，而只是选择其中的一部分，暂时不用部分细节。抽象包括两方面，一是过程抽象，二是数据抽象。</span><br><span class="line">(2)继承： 继承是一种联结类的层次模型，并且允许和鼓励类的重用，它提供了一种明确表述共性的方法。对象的一个新类可以从现有的类中派生，这个过程称为类继承。新类继承了原始类的特性，新类称为原始类的派生类（子类），而原始类称为新类的基类（父类）。派生类可以从它的基类那里继承方法和实例变量，并且类可以修改或增加新的方法使之更适合特殊的需要。 </span><br><span class="line">(3)封装： 封装是把过程和数据包围起来，对数据的访问只能通过已定义的界面。面向对象计算始于这个基本概念，即现实世界可以被描绘成一系列完全自治、封装的对象，这些对象通过一个受保护的接口访问其他对象。 </span><br><span class="line">(4) 多态性： 多态性是指允许不同类的对象对同一消息作出响应。多态性包括参数化多态性和包含多态性。多态性语言具有灵活、抽象、行为共享 、代码共享的优势，很好的解决了应用程序函数同名问题。</span><br></pre></td></tr></table></figure>
+
+<h2 id="类和对象的区别"><a href="#类和对象的区别" class="headerlink" title="类和对象的区别"></a>类和对象的区别</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.类是对某一类事物的描述，是抽象的；而对象是一个实实在在的个体，是类的一个实例。</span><br><span class="line"></span><br><span class="line">比如：“人”是一个类，而“教师”则是“人”的一个实例。</span><br><span class="line"></span><br><span class="line">2.对象是函数、变量的集合体；而类是一组函数和变量的集合体，即类是一组具有相同属性的对象集合体。</span><br></pre></td></tr></table></figure>
+
+<h3 id="Java的接口和C-的虚类的相同和不同处"><a href="#Java的接口和C-的虚类的相同和不同处" class="headerlink" title="Java的接口和C++的虚类的相同和不同处"></a>Java的接口和C++的虚类的相同和不同处</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">由于Java不支持多继承，而有可能某个类或对象要使用分别在几个类或对象里面的方法或属性，现有的单继承机制就不能满足要求。与继承相比，接口有更高的灵活性，因为接口中没有任何实现代码。当一个类实现了接口以后，该类要实现接口里面所有的方法和属性，并且接口里面的属性在默认状态下面都是public static,所有方法默认情况下是public，一个类可以实现多个接口。</span><br></pre></td></tr></table></figure>
+
+<h3 id="abstract-class和interface有什么区别"><a href="#abstract-class和interface有什么区别" class="headerlink" title="abstract class和interface有什么区别?"></a>abstract class和interface有什么区别?</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Java提供和支持创建抽象类和接口。它们的实现有共同点，不同点在于： </span><br><span class="line">接口中所有的方法隐含的都是抽象的。而抽象类则可以同时包含抽象和非抽象的方法。 </span><br><span class="line">类可以实现很多个接口，但是只能继承一个抽象类 </span><br><span class="line">类可以不实现抽象类和接口声明的所有方法，当然，在这种情况下，类也必须得声明成是抽象的。 </span><br><span class="line">抽象类可以在不提供接口方法实现的情况下实现接口。 </span><br><span class="line">Java接口中声明的变量默认都是final的。抽象类可以包含非final的变量。 </span><br><span class="line">Java接口中的成员函数默认是public的。抽象类的成员函数可以是private，protected或者是public。 </span><br><span class="line">接口是绝对抽象的，不可以被实例化。抽象类也不可以被实例化，但是，如果它包含main方法的话是可以被调用的。 </span><br><span class="line">也可以参考JDK8中抽象类和接口的区别</span><br></pre></td></tr></table></figure>
+
+<h3 id="java中数组是不是对象？"><a href="#java中数组是不是对象？" class="headerlink" title="java中数组是不是对象？"></a>java中数组是不是对象？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在java中数组有自己的属性，也有一些方法可以被调用。由于对象的特点是封装了一些数据，同时提供了一些属性和方法，从这个角度来说，数组是对象。每个数组类型都有其对应的类型，可以通过instanceof来判断数据的类型。</span><br></pre></td></tr></table></figure>
+
+<h3 id="Comparable和Comparator接口的作用以及它们的区别"><a href="#Comparable和Comparator接口的作用以及它们的区别" class="headerlink" title="Comparable和Comparator接口的作用以及它们的区别"></a>Comparable和Comparator接口的作用以及它们的区别</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Java提供了只包含一个compareTo()方法的Comparable接口。这个方法可以个给两个对象排序。具体来说，它返回负数，0，正数来表明输入对象小于，等于，大于已经存在的对象。 </span><br><span class="line">Java提供了包含compare()和equals()两个方法的Comparator接口。compare()方法用来给两个输入参数排序，返回负数，0，正数表明第一个参数是小于，等于，大于第二个参数。equals()方法需要一个对象作为参数，它用来决定输入参数是否和comparator相等。只有当输入参数也是一个comparator并且输入参数和当前comparator的排序结果是相同的时候，这个方法才返回true。</span><br></pre></td></tr></table></figure>
+
+<h3 id="Java是否支持多继承？"><a href="#Java是否支持多继承？" class="headerlink" title="Java是否支持多继承？"></a>Java是否支持多继承？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Java中类不支持多继承，只支持单继承（即一个类只有一个父类）。 但是java中的接口支持多继承，即一个子接口可以有多个父接口。（接口的作用是用来扩展对象的功能，一个子接口继承多个父接口，说明子接口扩展了多个功能，当类实现接口时，类就扩展了相应的功能）。</span><br></pre></td></tr></table></figure>
+
+<h3 id="什么是泛型？"><a href="#什么是泛型？" class="headerlink" title="什么是泛型？"></a>什么是泛型？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">在Java SE 1.5之前，没有泛型的情况的下，通过对类型Object的引用来实现参数的“任意化”，“任意化”带来的缺点就是被Object引用对象被“上塑”造型，对象的具体类型信息被丢失，这样当我们要使用该类型时要做显式的强制类型转换，而这种转换是要求开发者对实际参数类型可以预知的情况下进行的。对于强制类型转换错误的情况，编译器可能不提示错误，在运行的时候才出现异常，这是一个安全隐患。</span><br><span class="line">　　泛型的好处是在编译的时候检查类型安全，并且所有的强制转换都是自动和隐式的，提高代码的重用率。</span><br><span class="line">　　泛型的参数类型可以使用extends语句，例如&lt;T extends superclass&gt;。习惯上称为“有界类型”</span><br><span class="line">泛型的参数类型还可以是通配符类型。例如Class&lt;?&gt; classType = Class.forName(&quot;java.lang.String&quot;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Math类中round、ceil和floor方法的功能？"><a href="#Math类中round、ceil和floor方法的功能？" class="headerlink" title="Math类中round、ceil和floor方法的功能？"></a>Math类中round、ceil和floor方法的功能？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">位于java.lang包中</span><br><span class="line"></span><br><span class="line">math.ceil:向上取整      Math.ceil(11.3)的结果为12,Math.ceil(-11.3)的结果是-11  </span><br><span class="line"></span><br><span class="line">math.floor：向下取整    Math.floor(11.6)的结果为11,Math.floor(-11.6)的结果是-12  </span><br><span class="line"></span><br><span class="line">math.round：四舍五入 算法为:Math.floor(x+0.5)  将原来的数字加上0.5后向下取整     Math.round(11.5)的结果为12，Math.round(-11.5)的结果为-11</span><br></pre></td></tr></table></figure>
+
+<h3 id="java关键字"><a href="#java关键字" class="headerlink" title="java关键字"></a>java关键字</h3><p>对关键字的详细介绍，戳这里：<a href="https://www.cnblogs.com/chenglc/p/6922834.html" target="_blank" rel="noopener">https://www.cnblogs.com/chenglc/p/6922834.html</a> </p>
+<table>
+<thead>
+<tr>
+<th><a href="https://baike.baidu.com/item/abstract" target="_blank" rel="noopener">abstract</a></th>
+<th><a href="https://baike.baidu.com/item/assert" target="_blank" rel="noopener">assert</a></th>
+<th><a href="https://baike.baidu.com/item/boolean" target="_blank" rel="noopener">boolean</a></th>
+<th>break</th>
+<th><a href="https://baike.baidu.com/item/byte" target="_blank" rel="noopener">byte</a></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>case</td>
+<td><a href="https://baike.baidu.com/item/catch" target="_blank" rel="noopener">catch</a></td>
+<td><a href="https://baike.baidu.com/item/char" target="_blank" rel="noopener">char</a></td>
+<td><a href="https://baike.baidu.com/item/class" target="_blank" rel="noopener">class</a></td>
+<td>const</td>
+</tr>
+<tr>
+<td>continue</td>
+<td><a href="https://baike.baidu.com/item/default" target="_blank" rel="noopener">default</a></td>
+<td><a href="https://baike.baidu.com/item/do" target="_blank" rel="noopener">do</a></td>
+<td><a href="https://baike.baidu.com/item/double" target="_blank" rel="noopener">double</a></td>
+<td><a href="https://baike.baidu.com/item/else" target="_blank" rel="noopener">else</a></td>
+</tr>
+<tr>
+<td><a href="https://baike.baidu.com/item/enum" target="_blank" rel="noopener">enum</a></td>
+<td><a href="https://baike.baidu.com/item/extends" target="_blank" rel="noopener">extends</a></td>
+<td><a href="https://baike.baidu.com/item/final" target="_blank" rel="noopener">final</a></td>
+<td><a href="https://baike.baidu.com/item/finally" target="_blank" rel="noopener">finally</a></td>
+<td>float</td>
+</tr>
+<tr>
+<td><a href="https://baike.baidu.com/item/for" target="_blank" rel="noopener">for</a></td>
+<td>goto</td>
+<td><a href="https://baike.baidu.com/item/if" target="_blank" rel="noopener">if</a></td>
+<td><a href="https://baike.baidu.com/item/implements" target="_blank" rel="noopener">implements</a></td>
+<td><a href="https://baike.baidu.com/item/import" target="_blank" rel="noopener">import</a></td>
+</tr>
+<tr>
+<td><a href="https://baike.baidu.com/item/instanceof" target="_blank" rel="noopener">instanceof</a></td>
+<td><a href="https://baike.baidu.com/item/int" target="_blank" rel="noopener">int</a></td>
+<td><a href="https://baike.baidu.com/item/interface" target="_blank" rel="noopener">interface</a></td>
+<td>long</td>
+<td>native</td>
+</tr>
+<tr>
+<td>new</td>
+<td><a href="https://baike.baidu.com/item/package" target="_blank" rel="noopener">package</a></td>
+<td><a href="https://baike.baidu.com/item/private" target="_blank" rel="noopener">private</a></td>
+<td><a href="https://baike.baidu.com/item/protected" target="_blank" rel="noopener">protected</a></td>
+<td><a href="https://baike.baidu.com/item/public" target="_blank" rel="noopener">public</a></td>
+</tr>
+<tr>
+<td><a href="https://baike.baidu.com/item/return" target="_blank" rel="noopener">return</a></td>
+<td><a href="https://baike.baidu.com/item/strictfp" target="_blank" rel="noopener">strictfp</a></td>
+<td><a href="https://baike.baidu.com/item/short" target="_blank" rel="noopener">short</a></td>
+<td><a href="https://baike.baidu.com/item/static" target="_blank" rel="noopener">static</a></td>
+<td><a href="https://baike.baidu.com/item/super" target="_blank" rel="noopener">super</a></td>
+</tr>
+<tr>
+<td><a href="https://baike.baidu.com/item/switch" target="_blank" rel="noopener">switch</a></td>
+<td><a href="https://baike.baidu.com/item/synchronized" target="_blank" rel="noopener">synchronized</a></td>
+<td><a href="https://baike.baidu.com/item/this" target="_blank" rel="noopener">this</a></td>
+<td><a href="https://baike.baidu.com/item/throw" target="_blank" rel="noopener">throw</a></td>
+<td>throws</td>
+</tr>
+<tr>
+<td><a href="https://baike.baidu.com/item/transient" target="_blank" rel="noopener">transient</a></td>
+<td>try</td>
+<td><a href="https://baike.baidu.com/item/void" target="_blank" rel="noopener">void</a></td>
+<td><a href="https://baike.baidu.com/item/volatile" target="_blank" rel="noopener">volatile</a></td>
+<td><a href="https://baike.baidu.com/item/while" target="_blank" rel="noopener">while</a></td>
+</tr>
+</tbody></table>
+<h3 id="运算符优先级"><a href="#运算符优先级" class="headerlink" title="运算符优先级"></a>运算符优先级</h3><table>
+<thead>
+<tr>
+<th align="center">优先级</th>
+<th align="center">运算符</th>
+<th>结合性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">.  ()  []</td>
+<td>从左向右</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">+（正）   -（负）   ++   –   ~  ！</td>
+<td>从左向右</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">*   /   %</td>
+<td>从左向右</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">+（加）   -（减）</td>
+<td>从左向右</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">«   »（无符号右移）   &gt;&gt;&gt;</td>
+<td>从左向右</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center">&lt;   &lt;=   &gt;   &gt;=   instanceof</td>
+<td>从左向右</td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td align="center">==    !=</td>
+<td>从左向右</td>
+</tr>
+<tr>
+<td align="center">8</td>
+<td align="center">&amp;</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">9</td>
+<td align="center">^</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">10</td>
+<td align="center">|</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">11</td>
+<td align="center">&amp;&amp;</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">12</td>
+<td align="center">||</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">13</td>
+<td align="center">?:</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">14</td>
+<td align="center">=   +=   -=   *=   /=   &amp;=   |=   ^=   ~=   «=   »=   &gt;&gt;&gt;=</td>
+<td>从左向右</td>
+</tr>
+</tbody></table>
+<h3 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h3><p>各种表达式：<a href="https://blog.csdn.net/zpz2411232428/article/details/83549502" target="_blank" rel="noopener">https://blog.csdn.net/zpz2411232428/article/details/83549502</a> </p>
+<table>
+<thead>
+<tr>
+<th align="center">字符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">\</td>
+<td>将下一字符标记为特殊字符、文本、反向引用或八进制转义符。例如，”n”匹配字符”n”。”\n”匹配换行符。序列”\\“匹配”\“，”\(“匹配”(“。</td>
+</tr>
+<tr>
+<td align="center">^</td>
+<td>匹配输入字符串开始的位置。如果设置了 <strong>RegExp</strong> 对象的 <strong>Multiline</strong> 属性，^ 还会与”\n”或”\r”之后的位置匹配。</td>
+</tr>
+<tr>
+<td align="center">$</td>
+<td>匹配输入字符串结尾的位置。如果设置了 <strong>RegExp</strong> 对象的 <strong>Multiline</strong> 属性，$ 还会与”\n”或”\r”之前的位置匹配。</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td>零次或多次匹配前面的字符或子表达式。例如，zo* 匹配”z”和”zoo”。* 等效于 {0,}。</td>
+</tr>
+<tr>
+<td align="center">+</td>
+<td>一次或多次匹配前面的字符或子表达式。例如，”zo+”与”zo”和”zoo”匹配，但与”z”不匹配。+ 等效于 {1,}。</td>
+</tr>
+<tr>
+<td align="center">?</td>
+<td>零次或一次匹配前面的字符或子表达式。例如，”do(es)?”匹配”do”或”does”中的”do”。? 等效于 {0,1}。</td>
+</tr>
+<tr>
+<td align="center">{<em>n</em>}</td>
+<td><em>n</em> 是非负整数。正好匹配 <em>n</em> 次。例如，”o{2}”与”Bob”中的”o”不匹配，但与”food”中的两个”o”匹配。</td>
+</tr>
+<tr>
+<td align="center">{<em>n</em>,}</td>
+<td><em>n</em> 是非负整数。至少匹配 <em>n</em> 次。例如，”o{2,}”不匹配”Bob”中的”o”，而匹配”foooood”中的所有 o。”o{1,}”等效于”o+”。”o{0,}”等效于”o*”。</td>
+</tr>
+<tr>
+<td align="center">{<em>n</em>,<em>m</em>}</td>
+<td><em>m</em> 和 <em>n</em> 是非负整数，其中 <em>n</em> &lt;= <em>m</em>。匹配至少 <em>n</em> 次，至多 <em>m</em> 次。例如，”o{1,3}”匹配”fooooood”中的头三个 o。’o{0,1}’ 等效于 ‘o?’。注意：您不能将空格插入逗号和数字之间。</td>
+</tr>
+<tr>
+<td align="center">?</td>
+<td>当此字符紧随任何其他限定符（<em>、+、?、{*n</em>}、{<em>n</em>,}、{<em>n</em>,<em>m</em>}）之后时，匹配模式是”非贪心的”。”非贪心的”模式匹配搜索到的、尽可能短的字符串，而默认的”贪心的”模式匹配搜索到的、尽可能长的字符串。例如，在字符串”oooo”中，”o+?”只匹配单个”o”，而”o+”匹配所有”o”。</td>
+</tr>
+<tr>
+<td align="center">.</td>
+<td>匹配除”\r\n”之外的任何单个字符。若要匹配包括”\r\n”在内的任意字符，请使用诸如”[\s\S]”之类的模式。</td>
+</tr>
+<tr>
+<td align="center">(<em>pattern</em>)</td>
+<td>匹配 <em>pattern</em> 并捕获该匹配的子表达式。可以使用 <strong>$0…$9</strong> 属性从结果”匹配”集合中检索捕获的匹配。若要匹配括号字符 ( )，请使用”(“或者”)“。</td>
+</tr>
+<tr>
+<td align="center">(?:<em>pattern</em>)</td>
+<td>匹配 <em>pattern</em> 但不捕获该匹配的子表达式，即它是一个非捕获匹配，不存储供以后使用的匹配。这对于用”or”字符 (|) 组合模式部件的情况很有用。例如，’industr(?:y|ies) 是比 ‘industry|industries’ 更经济的表达式。</td>
+</tr>
+<tr>
+<td align="center">(?=<em>pattern</em>)</td>
+<td>执行正向预测先行搜索的子表达式，该表达式匹配处于匹配 <em>pattern</em> 的字符串的起始点的字符串。它是一个非捕获匹配，即不能捕获供以后使用的匹配。例如，’Windows (?=95|98|NT|2000)’ 匹配”Windows 2000”中的”Windows”，但不匹配”Windows 3.1”中的”Windows”。预测先行不占用字符，即发生匹配后，下一匹配的搜索紧随上一匹配之后，而不是在组成预测先行的字符后。</td>
+</tr>
+<tr>
+<td align="center">(?!<em>pattern</em>)</td>
+<td>执行反向预测先行搜索的子表达式，该表达式匹配不处于匹配 <em>pattern</em> 的字符串的起始点的搜索字符串。它是一个非捕获匹配，即不能捕获供以后使用的匹配。例如，’Windows (?!95|98|NT|2000)’ 匹配”Windows 3.1”中的 “Windows”，但不匹配”Windows 2000”中的”Windows”。预测先行不占用字符，即发生匹配后，下一匹配的搜索紧随上一匹配之后，而不是在组成预测先行的字符后。</td>
+</tr>
+<tr>
+<td align="center"><em>x</em>|<em>y</em></td>
+<td>匹配 <em>x</em> 或 <em>y</em>。例如，’z|food’ 匹配”z”或”food”。’(z|f)ood’ 匹配”zood”或”food”。</td>
+</tr>
+<tr>
+<td align="center">[<em>xyz</em>]</td>
+<td>字符集。匹配包含的任一字符。例如，”[abc]”匹配”plain”中的”a”。</td>
+</tr>
+<tr>
+<td align="center">[^<em>xyz</em>]</td>
+<td>反向字符集。匹配未包含的任何字符。例如，”[^abc]”匹配”plain”中”p”，”l”，”i”，”n”。</td>
+</tr>
+<tr>
+<td align="center">[<em>a-z</em>]</td>
+<td>字符范围。匹配指定范围内的任何字符。例如，”[a-z]”匹配”a”到”z”范围内的任何小写字母。</td>
+</tr>
+<tr>
+<td align="center">[^<em>a-z</em>]</td>
+<td>反向范围字符。匹配不在指定的范围内的任何字符。例如，”[^a-z]”匹配任何不在”a”到”z”范围内的任何字符。</td>
+</tr>
+<tr>
+<td align="center">\b</td>
+<td>匹配一个字边界，即字与空格间的位置。例如，”er\b”匹配”never”中的”er”，但不匹配”verb”中的”er”。</td>
+</tr>
+<tr>
+<td align="center">\B</td>
+<td>非字边界匹配。”er\B”匹配”verb”中的”er”，但不匹配”never”中的”er”。</td>
+</tr>
+<tr>
+<td align="center">\c<em>x</em></td>
+<td>匹配 <em>x</em> 指示的控制字符。例如，\cM 匹配 Control-M 或回车符。<em>x</em> 的值必须在 A-Z 或 a-z 之间。如果不是这样，则假定 c 就是”c”字符本身。</td>
+</tr>
+<tr>
+<td align="center">\d</td>
+<td>数字字符匹配。等效于 [0-9]。</td>
+</tr>
+<tr>
+<td align="center">\D</td>
+<td>非数字字符匹配。等效于 [^0-9]。</td>
+</tr>
+<tr>
+<td align="center">\f</td>
+<td>换页符匹配。等效于 \x0c 和 \cL。</td>
+</tr>
+<tr>
+<td align="center">\n</td>
+<td>换行符匹配。等效于 \x0a 和 \cJ。</td>
+</tr>
+<tr>
+<td align="center">\r</td>
+<td>匹配一个回车符。等效于 \x0d 和 \cM。</td>
+</tr>
+<tr>
+<td align="center">\s</td>
+<td>匹配任何空白字符，包括空格、制表符、换页符等。与 [ \f\n\r\t\v] 等效。</td>
+</tr>
+<tr>
+<td align="center">\S</td>
+<td>匹配任何非空白字符。与 [^ \f\n\r\t\v] 等效。</td>
+</tr>
+<tr>
+<td align="center">\t</td>
+<td>制表符匹配。与 \x09 和 \cI 等效。</td>
+</tr>
+<tr>
+<td align="center">\v</td>
+<td>垂直制表符匹配。与 \x0b 和 \cK 等效。</td>
+</tr>
+<tr>
+<td align="center">\w</td>
+<td>匹配任何字类字符，包括下划线。与”[A-Za-z0-9_]”等效。</td>
+</tr>
+<tr>
+<td align="center">\W</td>
+<td>与任何非单词字符匹配。与”[^A-Za-z0-9_]”等效。</td>
+</tr>
+<tr>
+<td align="center">\x<em>n</em></td>
+<td>匹配 <em>n</em>，此处的 <em>n</em> 是一个十六进制转义码。十六进制转义码必须正好是两位数长。例如，”\x41”匹配”A”。”\x041”与”\x04”&amp;”1”等效。允许在正则表达式中使用 ASCII 代码。</td>
+</tr>
+<tr>
+<td align="center">*num*</td>
+<td>匹配 <em>num*，此处的 *num</em> 是一个正整数。到捕获匹配的反向引用。例如，”(.)\1”匹配两个连续的相同字符。</td>
+</tr>
+<tr>
+<td align="center">*n*</td>
+<td>标识一个八进制转义码或反向引用。如果 *n* 前面至少有 <em>n</em> 个捕获子表达式，那么 <em>n</em> 是反向引用。否则，如果 <em>n</em> 是八进制数 (0-7)，那么 <em>n</em>是八进制转义码。</td>
+</tr>
+<tr>
+<td align="center">*nm*</td>
+<td>标识一个八进制转义码或反向引用。如果 *nm* 前面至少有 <em>nm</em> 个捕获子表达式，那么 <em>nm</em> 是反向引用。如果 *nm* 前面至少有 <em>n</em> 个捕获，则 <em>n</em> 是反向引用，后面跟有字符 <em>m</em>。如果两种前面的情况都不存在，则 *nm* 匹配八进制值 <em>nm*，其中 *n</em> 和 <em>m</em> 是八进制数字 (0-7)。</td>
+</tr>
+<tr>
+<td align="center">\nml</td>
+<td>当 <em>n</em> 是八进制数 (0-3)，<em>m</em> 和 <em>l</em> 是八进制数 (0-7) 时，匹配八进制转义码 <em>nml</em>。</td>
+</tr>
+<tr>
+<td align="center">\u<em>n</em></td>
+<td>匹配 <em>n</em>，其中 <em>n</em> 是以四位十六进制数表示的 Unicode 字符。例如，\u00A9 匹配版权符号 (©)。</td>
+</tr>
+</tbody></table>
+
       
     </div>
     
@@ -384,6 +759,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java-SE/" rel="tag"># Java SE</a>
+          
+        </div>
       
 
       
@@ -461,8 +842,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -558,6 +948,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#面向对象的特征"><span class="nav-number">1.</span> <span class="nav-text">面向对象的特征</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#类和对象的区别"><span class="nav-number"></span> <span class="nav-text">类和对象的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Java的接口和C-的虚类的相同和不同处"><span class="nav-number">1.</span> <span class="nav-text">Java的接口和C++的虚类的相同和不同处</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#abstract-class和interface有什么区别"><span class="nav-number">2.</span> <span class="nav-text">abstract class和interface有什么区别?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java中数组是不是对象？"><span class="nav-number">3.</span> <span class="nav-text">java中数组是不是对象？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Comparable和Comparator接口的作用以及它们的区别"><span class="nav-number">4.</span> <span class="nav-text">Comparable和Comparator接口的作用以及它们的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java是否支持多继承？"><span class="nav-number">5.</span> <span class="nav-text">Java是否支持多继承？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是泛型？"><span class="nav-number">6.</span> <span class="nav-text">什么是泛型？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Math类中round、ceil和floor方法的功能？"><span class="nav-number">7.</span> <span class="nav-text">Math类中round、ceil和floor方法的功能？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java关键字"><span class="nav-number">8.</span> <span class="nav-text">java关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运算符优先级"><span class="nav-number">9.</span> <span class="nav-text">运算符优先级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正则表达式"><span class="nav-number">10.</span> <span class="nav-text">正则表达式</span></a></li></ol></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
