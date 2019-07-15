@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Servlet&JSP,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Life would be too smooth if it had no rubs in it.     关于Servlet&amp;amp;JSP的一些知识点。 持续更新中…">
+<meta name="keywords" content="Servlet&amp;JSP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Servlet与JSP">
+<meta property="og:url" content="http://ytsjh.top/2019/07/15/Servlet与JSP/index.html">
+<meta property="og:site_name" content="Tong&#39;s Blog">
+<meta property="og:description" content="Life would be too smooth if it had no rubs in it.     关于Servlet&amp;amp;JSP的一些知识点。 持续更新中…">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://ytsjh.top/myimages/servlet.jpg">
+<meta property="og:updated_time" content="2019-07-15T09:38:11.530Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Servlet与JSP">
+<meta name="twitter:description" content="Life would be too smooth if it had no rubs in it.     关于Servlet&amp;amp;JSP的一些知识点。 持续更新中…">
+<meta name="twitter:image" content="http://ytsjh.top/myimages/servlet.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://ytsjh.top/2019/07/15/Servlet与JSP/">
+
+
+
+
+
+  <title>Servlet与JSP | Tong's Blog</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband">
+	<a href="https://github.com/YTTong" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+	</div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Tong's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Less is more.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            Commonweal 404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ytsjh.top/2019/07/15/Servlet与JSP/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="殷彤">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/yt.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tong's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Servlet与JSP</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-15T17:33:41+08:00">
+                2019-07-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java-Web/" itemprop="url" rel="index">
+                    <span itemprop="name">Java Web</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote class="blockquote-center">Life would be too smooth if it had no rubs in it. </blockquote> 
+
+<p><img src="/myimages/servlet.jpg" alt></p>
+<p>关于Servlet&amp;JSP的一些知识点。</p>
+<p>持续更新中…</p>
+<a id="more"></a> 
+
+<h1 id="Servlet-amp-JSP"><a href="#Servlet-amp-JSP" class="headerlink" title="Servlet&amp;JSP"></a><center>Servlet&amp;JSP</center></h1><h3 id="Http中的get和post请求"><a href="#Http中的get和post请求" class="headerlink" title="Http中的get和post请求"></a>Http中的get和post请求</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">get请求功能：从服务器端获取用户所需资源，并将其作为响应返回给客户端，这些资源可以是HTML页面、图片、文档等内容中的任何一种。</span><br><span class="line">post方法能从服务端获取资源，还可以向服务器上传数据。</span><br><span class="line">1. get不安全，同时页面提交数据时，get的数据大小由限制4k。</span><br><span class="line">2. post安全，同时没有数据大小限制。</span><br></pre></td></tr></table></figure>
+
+<h3 id="什么是Servlet？"><a href="#什么是Servlet？" class="headerlink" title="什么是Servlet？"></a>什么是Servlet？</h3><p>  运行于Web服务器中，功能是提供请求/响应的web服务模式，可以生成动态的web内容。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Servlet处理客户端请求的步骤：</span><br><span class="line"></span><br><span class="line">-用户通过点击一个链接来向Servlet发起请求</span><br><span class="line"></span><br><span class="line">-Web服务器接收到该请求后，会把该请求交给相应的容器来处理，当容器发现这是对Servlet发起的请求后，容器创建两个对象：HttpServletResponse和HttpServletRequest。</span><br><span class="line"></span><br><span class="line">-容器可以根据请求消息中的URL消息找到对应的Servlet，然后针对该请求创建一个单独的线程，同时把第2步中创建的两个对象以参数的形式传递到新创建的线程中。</span><br><span class="line"></span><br><span class="line">-容器调用Servelt的service()方法来完成对用户请求的响应，service()方法会调用doPost()或doGet()方法来完成具体的响应任务，同时把生成的动态页面返回给容器</span><br><span class="line"></span><br><span class="line">-容器把响应消息组装成HTTP格式返回客户端，此时，这个线程运行结束，同时删除第2步创建的两个对象</span><br></pre></td></tr></table></figure>
+
+<h3 id="Servlet与CGI的区别"><a href="#Servlet与CGI的区别" class="headerlink" title="Servlet与CGI的区别"></a>Servlet与CGI的区别</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">CGI（Common GateWay Interface 公共网管接口）是用Perl脚本编写的程序，可以用来生成动态页面。</span><br><span class="line"></span><br><span class="line">1. Servlet在服务器进程中，多线程的方式运行service()，一个实例可以服务多个请求。并且实例一般不会销毁。</span><br><span class="line">2. CGI对每个请求都产生新的进程。服务完就销毁了。</span><br></pre></td></tr></table></figure>
+
+<h3 id="Servlet生命周期和工作原理"><a href="#Servlet生命周期和工作原理" class="headerlink" title="Servlet生命周期和工作原理"></a>Servlet生命周期和工作原理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-加载：Tomcat通过类加载器使用Servlet类对应的文件来加载Servlet。</span><br><span class="line">-创建：调用Servlet的构造器生成一个Servlet实例。</span><br><span class="line">-init()：在Servlet的生命周期中，仅执行一次，在Tomcat装入Servlet时执行的，这个方法在Servlet创建但是向客户端提供请求前被调用。</span><br><span class="line">-service()：Tomcat接收到请求，发现这是对Servlet发起的请求，Tomcat这个时候会创建两个对象HttpServletRequest，HttpServletResponse。容器根据请求的URL找到对应的Servlet，然后针对这个请求创建一个线程，同时把之前创建的两个对象以参数的像是传递给这个线程。然后容器调用这个Servlet的service()，service()方法根据请求的method属性值来确定调用doGet还是doPost，然后把生成响应数据（动态页面）返回给容器，容器把响应消息组装成HTTP格式返回给客户端。</span><br><span class="line">-destory：容器在卸载Servlet之前调用destory，让servlet释放了自己占用的系统资源。</span><br><span class="line">在Servlet生命周期中，容器只调用一次的方法是：init，destory</span><br></pre></td></tr></table></figure>
+
+<h3 id="JSP与Servlet的异同"><a href="#JSP与Servlet的异同" class="headerlink" title="JSP与Servlet的异同"></a>JSP与Servlet的异同</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. JSP可以被看作是一个特殊的Servlet，只不过是Servlet的扩展，只要是JSP能实现的，Servlet也都可以实现。因为JSP页面最后还是要被转换成Servlet来运行，因此处理请求实际上是编译后的Servlet。</span><br><span class="line">2. Servlet的实现方式是在Java中嵌入了HTML，JSP是在HTML中嵌入了Java</span><br><span class="line">3. Servlet中可没有内置对象，JSP里面有9个，但是都是通过HttpServletRequest，HttpServletResponse，HttpServlet对象得到的。</span><br></pre></td></tr></table></figure>
+
+<h3 id="Servlet、Genericervlet、HttpServlet"><a href="#Servlet、Genericervlet、HttpServlet" class="headerlink" title="Servlet、Genericervlet、HttpServlet"></a>Servlet、Genericervlet、HttpServlet</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">1. Servlet是个接口，</span><br><span class="line">2. GenericServlet是个抽象类，实现了Servlet和ServletConfig，这个Servlet是个和协议没有半毛钱关系的Servlet。</span><br><span class="line">3. HttpServletRequest和HttpServletResponse是两个接口</span><br><span class="line">4. HttpServlet继承了GenericServlet，但是这也是个抽象类。</span><br><span class="line">5. GenericServlet做的事情：</span><br><span class="line">   1. init方法，保存了config对象，并实现了getServletInfo和getServletConfig。</span><br><span class="line">   2. 增加了一个空参数的init()，防止开发人员重写重生的init</span><br><span class="line">   3. service方法空实现--&gt;写成了抽象方法，强制开发人员实现。</span><br><span class="line">   4. destory空实现。</span><br><span class="line">   5. 实现了servletConfig接口，接口中的方法直接调用config实现类实现。</span><br><span class="line">6. HttpServlet做的事情：</span><br><span class="line">   1. servlet中强转参数</span><br><span class="line">      ServletRequest和ServletResponse--&gt;HttpServletRequest和HttpServletResponse。</span><br><span class="line">   2. 根据不同请求调用不同的方法。</span><br></pre></td></tr></table></figure>
+
+<h3 id="Servlet、ServletContext、ServletConfig"><a href="#Servlet、ServletContext、ServletConfig" class="headerlink" title="Servlet、ServletContext、ServletConfig"></a>Servlet、ServletContext、ServletConfig</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">ServletContext是Servlet和Servlet容器（Tomcat）之间的直接通信接口。Servlet容器在启动一个Webapp时，会为它创建一个ServletContext，也就是Servlet上下文环境。</span><br><span class="line">每一个webapp都有唯一的ServletContext对象。同一个webapp下的所有servlet对象共享一个ServletContext。</span><br><span class="line"></span><br><span class="line">servlet的初始化参数，就是在这个ServletContext中。</span><br><span class="line"></span><br><span class="line">1. 获取web上下文路径（context.getContextPath()）</span><br><span class="line">2. 获取全局参数(context.getInitParameter(paramName))</span><br><span class="line">3. 和域相关	</span><br><span class="line"></span><br><span class="line">ServletConfig是当Servlet容器（Tomcat）初始化一个Servlet类型的对象时，会为这个Servlet对象创建一个ServletConfig对象。在这个ServletConfig对象中包含了Servlet的初始化参数信息。</span><br><span class="line"></span><br><span class="line">ServeltConfig和ServletContext关联。Tomcat在调用Servlet对象的init(ServletConfig config)方法时，会把ServletConfig类型的对象当作参数传递给servlet对象。</span><br><span class="line"></span><br><span class="line">ServletContext是对于Webapp而言的，其实就是四大域中的Application，在Tomcat启动的时候就加载了。而ServletConfig是对于某一个Servlet而言的。</span><br></pre></td></tr></table></figure>
+
+<h3 id="Servlet中的forward和redirect有什么区别？"><a href="#Servlet中的forward和redirect有什么区别？" class="headerlink" title="Servlet中的forward和redirect有什么区别？"></a>Servlet中的forward和redirect有什么区别？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">forward：请求转发，服务器端行为，然后目标地址的URL，但是服务器内部转发了。（只有一次请求）</span><br><span class="line">redirect：重定向,客户端行为，目的地址的URL改变了，两次请求！！！</span><br><span class="line">重定向会导致request对象信息丢失，而请求转发不会。</span><br><span class="line">执行forward时，浏览器不知道服务器发送的内容是从何处来，浏览器地址栏中还是原来的地址</span><br><span class="line">执行redirect时，服务端告诉浏览器重新去请求地址</span><br><span class="line">forward是内部重定向，redirect是外部重定向</span><br></pre></td></tr></table></figure>
+
+<h3 id="JSP执行原理"><a href="#JSP执行原理" class="headerlink" title="JSP执行原理"></a>JSP执行原理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">客户端发出请求</span><br><span class="line">JSP引擎将jsp页面翻译成Servlet的java源文件</span><br><span class="line">Tomcat中将源文件编程成class并加载到内存中执行。</span><br></pre></td></tr></table></figure>
+
+<h3 id="JavaWeb四大域"><a href="#JavaWeb四大域" class="headerlink" title="JavaWeb四大域"></a>JavaWeb四大域</h3><h4 id="Application-ServletContext"><a href="#Application-ServletContext" class="headerlink" title="Application(ServletContext)"></a>Application(ServletContext)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. 作用域：整个Webapp，所有Servlet共用一个serveltContext。</span><br><span class="line">2. 生命周期：当Web应用被加载到Tomcat中时就创建了。</span><br></pre></td></tr></table></figure>
+
+<h4 id="Session（HttpSession）"><a href="#Session（HttpSession）" class="headerlink" title="Session（HttpSession）"></a>Session（HttpSession）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 作用域：一次会话。</span><br><span class="line">2. 生命周期：当第一次调用request.getSession()的时候，服务器会检查是否已经有了对应的Session，如果没有就在内存中创建一个Session并返回。但是当一段时间以后，Session没有被使用（默认30min），Session就会被销毁了。</span><br><span class="line">   如果服务器非正常关闭，没有到期的session也会跟着销毁。如果调用session提供的invalidate()，可以立即销毁session。</span><br></pre></td></tr></table></figure>
+
+<h4 id="Request（ServletRequest）"><a href="#Request（ServletRequest）" class="headerlink" title="Request（ServletRequest）"></a>Request（ServletRequest）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. 作用域：整个请求链，在Servlet处理好的数据给JSP显示，整个时候参数就可以放在ServletRequest域中</span><br><span class="line">2. 生命周期：整个请求链</span><br></pre></td></tr></table></figure>
+
+<h4 id="Page（PageContext）"><a href="#Page（PageContext）" class="headerlink" title="Page（PageContext）"></a>Page（PageContext）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. 作用域：当对JSP请求开始，当响应的结束时销毁。</span><br><span class="line">2. 作用范围：整个JSP页面，是四大域中最小的一个。</span><br></pre></td></tr></table></figure>
+
+<h3 id="HttpServletRequest和HttpServletResponse"><a href="#HttpServletRequest和HttpServletResponse" class="headerlink" title="HttpServletRequest和HttpServletResponse"></a>HttpServletRequest和HttpServletResponse</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"> HttpServletRequest</span><br><span class="line">   1. 请求地址(读取信息路径)</span><br><span class="line">   2. 请求头</span><br><span class="line">   3. 实体数据</span><br><span class="line">HttpServletResponse</span><br><span class="line">   1. 响应头</span><br><span class="line">   2. 状态码</span><br><span class="line">   3. 实体数据</span><br><span class="line">   4. 客户端写入Cookie（设置Cookie）</span><br><span class="line">   5. 重写URL</span><br></pre></td></tr></table></figure>
+
+<h3 id="HttpServletRequest中的getParamter-Attribute"><a href="#HttpServletRequest中的getParamter-Attribute" class="headerlink" title="HttpServletRequest中的getParamter/Attribute"></a>HttpServletRequest中的getParamter/Attribute</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. getAttribute表示从Request域中获取数据，必须在request域中进行设置（setAttribute）后才能拿到，设置和获取的都是Object</span><br><span class="line">2. getParameter表示接收参数，参数为页面提交的参数（表单提交的参数，URL重写）因此整个方法并没有参数设置（没有setParameter），而且返回的参数String</span><br></pre></td></tr></table></figure>
+
+<h3 id="JSP中的九大内置对象"><a href="#JSP中的九大内置对象" class="headerlink" title="JSP中的九大内置对象"></a>JSP中的九大内置对象</h3><p><a href="https://blog.csdn.net/icarus_wang/article/details/51107470" target="_blank" rel="noopener">https://blog.csdn.net/icarus_wang/article/details/51107470</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">out对象：用于向客户端、浏览器输出数据。</span><br><span class="line">request对象：封装了来自客户端、浏览器的各种信息。</span><br><span class="line">response对象：封装了服务器的响应信息。</span><br><span class="line">exception对象：封装了jsp程序执行过程中发生的异常和错误信息。</span><br><span class="line">config对象：封装了应用程序的配置信息。</span><br><span class="line">page对象：指向了当前jsp程序本身。</span><br><span class="line">session对象：用来保存会话信息。也就是说，可以实现在同一用户的不同请求之间共享数</span><br><span class="line">application对象：代表了当前应用程序的上下文。可以在不同的用户之间共享信息。</span><br><span class="line">pageContext对象：提供了对jsp页面所有对象以及命名空间的访问。</span><br></pre></td></tr></table></figure>
+
+<h3 id="JSP动作（6个）"><a href="#JSP动作（6个）" class="headerlink" title="JSP动作（6个）"></a>JSP动作（6个）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1. jsp：include，用来在页面被请求时引入一个文件。</span><br><span class="line">2. jsp：useBean，用来寻找或者实例化一个JavaBean</span><br><span class="line">3. jsp：setProperty，用来设置已经实例化的Bean对象。</span><br><span class="line">4. jsp：getProperty，用来获取某个JavaBean的属性。</span><br><span class="line">5. jsp：forward，用来把请求转到一个新页面</span><br><span class="line">6. jsp:plugin，用来在浏览器中显示一个对象。</span><br><span class="line">详情见java程序员面试笔记，5.1.12</span><br></pre></td></tr></table></figure>
+
+<h3 id="include的静态，动态引入（include指令和include动作）"><a href="#include的静态，动态引入（include指令和include动作）" class="headerlink" title="include的静态，动态引入（include指令和include动作）"></a>include的静态，动态引入（include指令和include动作）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1. include指令：&lt;%@ include file=&quot;text.jsp&quot;%&gt;</span><br><span class="line">2. include动作：</span><br><span class="line">   &lt;jsp:include page=&quot;text.jsp&quot; flush=&quot;true&quot;&gt;</span><br><span class="line">   	&lt;jsp:param name=&quot;name&quot;,value=&quot;value&quot;/&gt;</span><br><span class="line">   &lt;/jsp:include&gt;</span><br><span class="line">   </span><br><span class="line">   区别：</span><br><span class="line">	1. 根本区别：两者调用的时间。include指令是在编译阶段的指令，在编译时，编译器会把指令所指向的目标文件内容复制到指令所在的位置，替换指令本身，最终生成的一个文件，在运行时只有一个文件；include动作是在运行时的语法，在主页面被请求时，才将用到的页面包含进来，涉及到两个文件，类似于方法调用。</span><br></pre></td></tr></table></figure>
+
+<h3 id="Session与Cookie"><a href="#Session与Cookie" class="headerlink" title="Session与Cookie"></a>Session与Cookie</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1. Session在服务器端，Cookie在客户端</span><br><span class="line">2. Session的运行依赖Session id，而Session id是存在Cookie中的，也就说如果浏览器禁用了Cookie，同时Session也就无效了。</span><br><span class="line">3. Session可以放在文件，数据库，内存中</span><br><span class="line">4. 用户验证一般使用Session</span><br><span class="line">5. Cookie不安全，因为在本地，可能被被人用来进行Cookie欺骗</span><br><span class="line">6. Session会在一定时间内保存在服务器上，当访问太多的时候，并不好</span><br><span class="line">7. 单个Cookie保存的数据不能超过4k，很多浏览器都限制一个站点最多保存20个Cookie</span><br></pre></td></tr></table></figure>
+
+<h3 id="保存会话状态，有哪些方法"><a href="#保存会话状态，有哪些方法" class="headerlink" title="保存会话状态，有哪些方法"></a>保存会话状态，有哪些方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">HTTP协议本身无状态，服务器为了区别不同的用户，需要对用户会话进行跟踪，也就说用户登录的时候，为用户分配唯一的ID，下一次用户在请求中包含此ID，服务器就知道这是哪个用户了。</span><br><span class="line"></span><br><span class="line">1. URL重写：在URL中添加用户会话的信息作为请求的参数，或者将唯一的会话ID添加到URL结尾以标识一个会话。</span><br><span class="line">2. 设置表单隐藏域：将会话跟踪相关的字段添加到隐式表单域中。</span><br><span class="line">3. Session共享：Session的运行依赖Session id，而Session id是存在Cookie中的，也就说如果浏览器禁用了Cookie，同时Session也就无效了。</span><br><span class="line">4. 会话Cookie：Cookie是Web服务器发送给客户端的一小段信息，客户端请求时可以读取该信息发送到服务器端，进而进行用户的识别。对于客户端的每次请求，服务器都会将Cookie发送到客户端,在客户端可以进行保存,以便下次使用</span><br></pre></td></tr></table></figure>
+
+<h3 id="会话跟踪技术"><a href="#会话跟踪技术" class="headerlink" title="会话跟踪技术"></a>会话跟踪技术</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">会话指的是从客户端打开与服务器的连接并发出请求到服务器响应客户端请求的全过程。</span><br><span class="line"></span><br><span class="line">技术包括四种：</span><br><span class="line">page：代表与一个页面相关的对象和属性，一个页面由一个编译好的Java Servlet类表示。</span><br><span class="line">request：代表与Web客户端发送的一个请求相关的对象和属性，一个请求可跨越多个页面。</span><br><span class="line">session：代表与用于某个web客户端的一个用户体验相关的对象和属性，一个web会话可以也经常会跨越多个客户端请求。</span><br><span class="line">application：代表与整个web应用程序相关的对象和属性，跨越多个Web应用程序，包括多个页面、请求和会话的一个全局作用域。</span><br></pre></td></tr></table></figure>
+
+<h3 id="监听器，过滤器，拦截器"><a href="#监听器，过滤器，拦截器" class="headerlink" title="监听器，过滤器，拦截器"></a>监听器，过滤器，拦截器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">监听器</span><br><span class="line">1. contextInitialized</span><br><span class="line">2. contextDestroyed</span><br><span class="line"> 事件源：ServletContext，HttpSession，ServletRequest</span><br><span class="line"></span><br><span class="line">过滤器</span><br><span class="line">http://www.cnblogs.com/xdp-gacl/p/3948353.html</span><br><span class="line">http://www.runoob.com/jsp/jsp-writing-filters.html</span><br><span class="line"></span><br><span class="line">拦截器</span><br><span class="line">https://www.cnblogs.com/shangxiaofei/p/5328377.html</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+	
+    
+	
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    殷彤
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="http://ytsjh.top/2019/07/15/Servlet与JSP/" title="Servlet与JSP">http://ytsjh.top/2019/07/15/Servlet与JSP/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Servlet-JSP/" rel="tag"># Servlet&JSP</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/12/基于物联网的水质监测机器人/" rel="next" title="基于物联网的水质监测机器人">
+                <i class="fa fa-chevron-left"></i> 基于物联网的水质监测机器人
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NTA2MC8yMTU3Nw=="></div>
+    </div>
+
+  
+
+
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/yt.jpg" alt="殷彤">
+            
+              <p class="site-author-name" itemprop="name">殷彤</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/YTTong" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="791383829@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://youtube.com" target="_blank" title="YouTube">
+                      
+                        <i class="fa fa-fw fa-youtube"></i>YouTube</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Servlet-amp-JSP"><span class="nav-number">1.</span> <span class="nav-text">Servlet&amp;JSP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Http中的get和post请求"><span class="nav-number">1.0.1.</span> <span class="nav-text">Http中的get和post请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是Servlet？"><span class="nav-number">1.0.2.</span> <span class="nav-text">什么是Servlet？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Servlet与CGI的区别"><span class="nav-number">1.0.3.</span> <span class="nav-text">Servlet与CGI的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Servlet生命周期和工作原理"><span class="nav-number">1.0.4.</span> <span class="nav-text">Servlet生命周期和工作原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSP与Servlet的异同"><span class="nav-number">1.0.5.</span> <span class="nav-text">JSP与Servlet的异同</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Servlet、Genericervlet、HttpServlet"><span class="nav-number">1.0.6.</span> <span class="nav-text">Servlet、Genericervlet、HttpServlet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Servlet、ServletContext、ServletConfig"><span class="nav-number">1.0.7.</span> <span class="nav-text">Servlet、ServletContext、ServletConfig</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Servlet中的forward和redirect有什么区别？"><span class="nav-number">1.0.8.</span> <span class="nav-text">Servlet中的forward和redirect有什么区别？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSP执行原理"><span class="nav-number">1.0.9.</span> <span class="nav-text">JSP执行原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaWeb四大域"><span class="nav-number">1.0.10.</span> <span class="nav-text">JavaWeb四大域</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Application-ServletContext"><span class="nav-number">1.0.10.1.</span> <span class="nav-text">Application(ServletContext)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Session（HttpSession）"><span class="nav-number">1.0.10.2.</span> <span class="nav-text">Session（HttpSession）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Request（ServletRequest）"><span class="nav-number">1.0.10.3.</span> <span class="nav-text">Request（ServletRequest）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Page（PageContext）"><span class="nav-number">1.0.10.4.</span> <span class="nav-text">Page（PageContext）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HttpServletRequest和HttpServletResponse"><span class="nav-number">1.0.11.</span> <span class="nav-text">HttpServletRequest和HttpServletResponse</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HttpServletRequest中的getParamter-Attribute"><span class="nav-number">1.0.12.</span> <span class="nav-text">HttpServletRequest中的getParamter/Attribute</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSP中的九大内置对象"><span class="nav-number">1.0.13.</span> <span class="nav-text">JSP中的九大内置对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSP动作（6个）"><span class="nav-number">1.0.14.</span> <span class="nav-text">JSP动作（6个）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#include的静态，动态引入（include指令和include动作）"><span class="nav-number">1.0.15.</span> <span class="nav-text">include的静态，动态引入（include指令和include动作）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Session与Cookie"><span class="nav-number">1.0.16.</span> <span class="nav-text">Session与Cookie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#保存会话状态，有哪些方法"><span class="nav-number">1.0.17.</span> <span class="nav-text">保存会话状态，有哪些方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#会话跟踪技术"><span class="nav-number">1.0.18.</span> <span class="nav-text">会话跟踪技术</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#监听器，过滤器，拦截器"><span class="nav-number">1.0.19.</span> <span class="nav-text">监听器，过滤器，拦截器</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">true</span>
+
+  
+</div>
+
+<!--
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+-->
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
