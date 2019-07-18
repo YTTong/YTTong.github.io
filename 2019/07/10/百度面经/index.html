@@ -98,7 +98,7 @@
 <meta property="og:description" content="Clumsy birds have to start flying early.     百度面试问题 不给你看嘻嘻，秋招后再打开啦~">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://ytsjh.top/myimages/%E7%99%BE%E5%BA%A6.jpg">
-<meta property="og:updated_time" content="2019-07-12T14:51:20.932Z">
+<meta property="og:updated_time" content="2019-07-18T09:36:48.093Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="百度面经">
 <meta name="twitter:description" content="Clumsy birds have to start flying early.     百度面试问题 不给你看嘻嘻，秋招后再打开啦~">
@@ -417,6 +417,73 @@
 <p>19.问自己优缺点</p>
 <p>20.我有什么问题？</p>
 <p>好像凉了。。。</p>
+<hr>
+<p>下面是总结面试题及答案</p>
+<h4 id="int-与Integer的区别与联系"><a href="#int-与Integer的区别与联系" class="headerlink" title="int 与Integer的区别与联系"></a>int 与Integer的区别与联系</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">    int是基本数据类型，而Integer是其对应的包装类型。为了能够将这些基本数据类型当成对象操作，Java为每一个基本数据类型都引入了对应的包装类型。从Java 5开始引入了自动拆装箱机制，自动装箱是Java编译器在基本数据类型和对应的对象包装类型之间做的一个转化。</span><br><span class="line">Java 为每个原始类型提供了包装类型：</span><br><span class="line">- 原始类型: boolean， char，    byte，short，int，    long，float，double</span><br><span class="line">- 包装类型：Boolean，Character，Byte，Short，Integer，Long，Float，Double</span><br></pre></td></tr></table></figure>
+
+<h4 id="wait-sleep的区别-哪个有锁"><a href="#wait-sleep的区别-哪个有锁" class="headerlink" title="wait sleep的区别 哪个有锁"></a>wait sleep的区别 哪个有锁</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.  sleep是线程类（Thread）的方法，导致此线程暂停执行指定时间，到时后会自动恢复，但是监控状态依然保持。调用sleep不会释放对象锁。</span><br><span class="line">2.wait是Object类的方法，对此对象调用wait方法导致本线程放弃对象锁，进入等待此对象的等待锁定池，只有针对此对象发出notify方法（或notifyAll）后本线程才进入对象锁定池准备获得对象锁进入运行状态</span><br></pre></td></tr></table></figure>
+
+<h4 id="泛型的原理"><a href="#泛型的原理" class="headerlink" title="泛型的原理"></a>泛型的原理</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java泛型是通过擦除实现的，类定义中的类型参数T会被替换为Object，java编译器会将泛型类代码转换成普通非泛型类代码，将类型参数T擦除，替换为Object，插入强制的类型转换，java虚拟机实际运行的时候，它是不知道泛型这回事的，只知道普通的类及代码。</span><br></pre></td></tr></table></figure>
+
+<h4 id="定位哪个cpu下载过高"><a href="#定位哪个cpu下载过高" class="headerlink" title="定位哪个cpu下载过高"></a>定位哪个cpu下载过高</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.使用top命令确认占用CPU最高的进程的PID</span><br><span class="line">2 显示当前进程下的所有线程列表  ps -mp pid -o THREAD,tid,time</span><br><span class="line">3.找到耗时最高的线程TID，并将其线程ID转换为16进制格式：printf &quot;%x\n&quot; tid</span><br><span class="line">4.打印线程的堆栈信息，thread dump </span><br><span class="line">jstack pid |grep tid -A 30进一步分析堆栈信息，就会定位到问题所在</span><br></pre></td></tr></table></figure>
+
+<h4 id="copy哪种方法最快？还有哪些方法，速度怎样"><a href="#copy哪种方法最快？还有哪些方法，速度怎样" class="headerlink" title="copy哪种方法最快？还有哪些方法，速度怎样"></a>copy哪种方法最快？还有哪些方法，速度怎样</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">system.arraycopy 浅拷贝</span><br><span class="line">Arrays.copyOf 浅拷贝</span><br><span class="line">clone比较特殊，对于对象而言，它是深拷贝，但是对于数组而言，它是浅拷贝。</span><br></pre></td></tr></table></figure>
+
+<h4 id="举例线程安全的以及异步与同步？"><a href="#举例线程安全的以及异步与同步？" class="headerlink" title="举例线程安全的以及异步与同步？"></a>举例线程安全的以及异步与同步？</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">如果系统中存在临界资源（资源数量少于竞争资源的线程数量的资源），例如正在写的数据以后可能被另一个线程读到，或者正在读的数据可能已经被另一个线程写过了，那么这些数据就必须进行同步存取（数据库操作中的排他锁就是最好的例子）。当应用程序在对象上调用了一个需要花费很长时间来执行的方法，并且不希望让程序等待方法的返回时，就应该使用异步编程，在很多情况下采用异步途径往往更有效率。事实上，所谓的同步就是指阻塞式操作，而异步就是非阻塞式操作。</span><br></pre></td></tr></table></figure>
+
+<h4 id="b树与b-树，以及为什么使用b-树"><a href="#b树与b-树，以及为什么使用b-树" class="headerlink" title="b树与b+树，以及为什么使用b+树"></a>b树与b+树，以及为什么使用b+树</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">b+树的中间节点不保存数据，所以磁盘页能容纳更多节点元素，更“矮胖”；</span><br><span class="line">b+树查询必须查找到叶子节点，b树只要匹配到即可不用管元素位置，因此b+树查找更稳定（并不慢）；</span><br><span class="line">对于范围查找来说，b+树只需遍历叶子节点链表即可，b树却需要重复地中序遍历。</span><br></pre></td></tr></table></figure>
+
+<h4 id="测试接口功能测试时，get-post的区别"><a href="#测试接口功能测试时，get-post的区别" class="headerlink" title="测试接口功能测试时，get post的区别"></a>测试接口功能测试时，get post的区别</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">①get请求用来从服务器上获得资源，而post是用来向服务器提交数据；</span><br><span class="line">②get将表单中数据按照name=value的形式，添加到所指向的URL后面，将参数列表显示在地址栏；post是将表单中的数据放在HTTP协议的请求头中；因此，post比get更安全。</span><br><span class="line">③get传输的数据要受到URL长度限制（1024字节）；而post可以传输大量的数据，上传文件通常要使用post方式；</span><br></pre></td></tr></table></figure>
+
+<h4 id="磁盘io与内存io？"><a href="#磁盘io与内存io？" class="headerlink" title="磁盘io与内存io？"></a>磁盘io与内存io？</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">1. 缓存I/O</span><br><span class="line">又被称作标准I/O，大多数文件系统的默认I/O操作都是缓存I/O。在Linux的缓存I/O机制中，数据先从磁盘复制到内核空间的缓冲区，然后从内核空间缓冲区复制到应用程序的地址空间。</span><br><span class="line"> 读操作：操作系统检查内核的缓冲区有没有需要的数据，如果已经缓存了，那么就直接从缓存中返回；否则从磁盘中读取，然后缓存在操作系统的缓存中。</span><br><span class="line"> 写操作：将数据从用户空间复制到内核空间的缓存中。这时对用户程序来说写操作就已经完成，至于什么时候再写到磁盘中由操作系统决定，除非显示地调用了sync同步命令。</span><br><span class="line"> 缓存I/O的优点：1）在一定程度上分离了内核空间和用户空间，保护系统本身的运行安全；</span><br><span class="line">              2）可以减少读盘的次数，从而提高性能。</span><br><span class="line"> 缓存I/O的缺点：数据在传输过程中需要在应用程序地址空间和缓存之间进行多次数据拷贝操作，这些数据拷贝操作所带来的CPU以及内存开销是非常大的。</span><br><span class="line"></span><br><span class="line"> 2.直接IO</span><br><span class="line">就是应用程序直接访问磁盘数据，而不经过内核缓冲区，这样做的目的是减少一次从内核缓冲区到用户程序缓存的数据复制。比如说数据库管理系统这类应用，它们更倾向于选择它们自己的缓存机制，因为数据库管理系统往往比操作系统更了解数据库中存放的数据，数据库管理系统可以提供一种更加有效的缓存机制来提高数据库中数据的存取性能。</span><br><span class="line"> 直接IO的缺点：如果访问的数据不在应用程序缓存中，那么每次数据都会直接从磁盘加载，这种直接加载会非常缓存。通常直接IO与异步IO结合使用，会得到比较好的性能。（异步IO：当访问数据的线程发出请求之后，线程会接着去处理其他事，而不是阻塞等待）</span><br><span class="line"></span><br><span class="line"> 3.内存映射</span><br><span class="line"> 指将硬盘上文件的位置与进程逻辑地址空间中一块大小相同的区域一一对应，当要访问内存中一段数据时，转换为访问文件的某一段数据。目的同样是减少数据在用户空间和内核空间之间的拷贝操作。当大量数据需要传输的时候，采用内存映射方式去访问文件会获得比较好的效率。</span><br><span class="line"> 使用内存映射文件处理存储于磁盘上的文件时，将不必再对文件执行I/O操作，这意味着在对文件进行处理时将不必再为文件申请并分配缓存，所有的文件缓存操作均由系统直接管理，由于取消了将文件数据加载到内存、数据从内存到文件的回写以及释放内存块等步骤，使得内存映射文件在处理大数据量的文件时能起到相当重要的作用。</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="http流程"><a href="#http流程" class="headerlink" title="http流程"></a>http流程</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1.DNS解析 2.TCP连接 3.发送HTTP请求 4.服务器处理请求并返回HTTP报文 5.浏览器解析渲染页面</span><br></pre></td></tr></table></figure>
+
+<h4 id="在浏览器中输入-www-baidu-com-后执行的全部过程"><a href="#在浏览器中输入-www-baidu-com-后执行的全部过程" class="headerlink" title="在浏览器中输入 www.baidu.com 后执行的全部过程"></a>在浏览器中输入 <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a> 后执行的全部过程</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1）客户端浏览器通过DNS解析到www.baidu.com的IP地址220.181.27.48，通过这个IP地址找到客户端到服务器的路径。客户端浏览器发起一个HTTP请求报文到220.161.27.48，然后通过TCP进行封装数据包，输入到网络层。</span><br><span class="line"></span><br><span class="line">2）在客户端的传输层，把HTTP会话请求分成报文段，添加源和目的端口，如服务器使用80端口监听客户端的请求，客户端由系统随机选择一个端口如5000，与服务器进行交换，服务器把相应的请求返回给客户端的5000端口。然后使用IP层的IP地址查找目的端。</span><br><span class="line"></span><br><span class="line">3客户端的链路层，包通过链路层发送到路由器，通过邻居协议查找给定IP地址的MAC地址，目的地址，如果得到回应后就可以使用ARP的请求应答交换的IP数据包现在就可以传输了，然后发送IP数据包到达服务器的地址。</span><br></pre></td></tr></table></figure>
+
+<h4 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1）主机A向主机B发送TCP连接请求数据包，其中包含主机A的初始序列号seq(A)=x。（其中报文中同步标志位SYN=1，ACK=0；序号seq=x，表明传输数据时的第一个数据字节的序号是x）；</span><br><span class="line">2）主机B收到请求后，会发回连接确认数据包。（其中确认报文段中，标识位SYN=1，ACK=1，表示这是一个TCP连接响应数据报文，并含主机B的初始序列号seq(B)=y，以及B对A初始序列号的确认号ack(B)=x+1）</span><br><span class="line">3）第三次，主机A收到主机B的确认报文后，还需作出确认，即发送一个序列号seq(A)=x+1；确认号为ack(A)=y+1的报文；</span><br></pre></td></tr></table></figure>
+
+<h4 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">假设主机A为客户端，主机B为服务器，其释放TCP连接的过程如下： </span><br><span class="line">1）首先客户端A发送一个FIN，用来关闭客户到服务器的数据传送，然后等待服务器的确认。其中终止标志位FIN=1，序列号seq=u。 </span><br><span class="line">2）服务器收到这个FIN，它发回一个ACK，确认号ack为收到的序号加1。 </span><br><span class="line">3）关闭服务器到客户端的连接：也是发送一个FIN给客户端。 </span><br><span class="line">4）客户段收到FIN后，并发回一个ACK报文确认。然后经过2MSL后断开连接。</span><br><span class="line">MSL，最大报文段生存时间。用来处理可能丢失的最后一次的ACK确认。</span><br></pre></td></tr></table></figure>
+
+<h4 id="http-6个状态码"><a href="#http-6个状态码" class="headerlink" title="http 6个状态码"></a>http 6个状态码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">200 请求成功，一切正常</span><br><span class="line">302 请求重定向</span><br><span class="line">304 服务器端资源未改动，通知客户查找本地资源</span><br><span class="line">404 客户端访问资源不存在</span><br><span class="line">500 服务器内部出错</span><br></pre></td></tr></table></figure>
+
+<h4 id="讲一讲，线程与进程的区别"><a href="#讲一讲，线程与进程的区别" class="headerlink" title="讲一讲，线程与进程的区别"></a>讲一讲，线程与进程的区别</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">   进程和线程的主要差别在于它们是不同的操作系统资源管理方式。&lt;u&gt;进程有独立的地址空间&lt;/u&gt;，而线程只是一个进程中的不同执行路径。&lt;u&gt;线程有自己的堆栈和局部变量&lt;/u&gt;，但线程之间没有单独的地址空间，一个线程死掉就等于整个进程死掉，所以多进程的程序要比多线程的程序健壮，但&lt;u&gt;在进程切换时，耗费资源较大&lt;/u&gt;，效率要差一些。但对于一些要求同时进行并且又要共享某些变量的并发操作，只能用线程，不能用进程。</span><br><span class="line">1) 简而言之,一个程序至少有一个进程,一个进程至少有一个线程.</span><br><span class="line">3) 另外，进程在执行过程中拥有独立的内存单元，而多个线程共享内存，从而极大地提高了程序的运行效率。</span><br><span class="line">4) 线程不能够独立执行，必须依存在应用程序中，由应用程序提供多个线程执行控制。</span><br><span class="line">5) 从逻辑角度来看，多线程的意义在于一个应用程序中，有多个执行部分可以同时执行。但操作系统并没有将多个线程看做多个独立的应用，来实现进程的调度和管理以及资源分配。这就是进程和线程的重要区别。</span><br></pre></td></tr></table></figure>
+
+<h4 id="请说明重载（Overload）和重写（Override）的区别。重载的方法能否根据返回类型进行区分？"><a href="#请说明重载（Overload）和重写（Override）的区别。重载的方法能否根据返回类型进行区分？" class="headerlink" title="请说明重载（Overload）和重写（Override）的区别。重载的方法能否根据返回类型进行区分？"></a>请说明重载（Overload）和重写（Override）的区别。重载的方法能否根据返回类型进行区分？</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">方法的重载和重写都是实现多态的方式，区别在于前者实现的是编译时的多态性，而后者实现的是运行时的多态性。</span><br><span class="line">重载发生在一个类中，同名的方法如果有不同的参数列表（参数类型不同、参数个数不同或者二者都不同）则视为重载；</span><br><span class="line">重写发生在子类与父类之间，重写要求子类被重写方法与父类被重写方法有相同的返回类型，比父类被重写方法更好访问，不能比父类被重写方法声明更多的异常（里氏代换原则）。重载对返回类型没有特殊的要求。</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>百度测试二面  面试官 男生</p>
+<h4 id="首先强调工作的了解与兴趣，不了解如何面试，再好好了解一下"><a href="#首先强调工作的了解与兴趣，不了解如何面试，再好好了解一下" class="headerlink" title="首先强调工作的了解与兴趣，不了解如何面试，再好好了解一下"></a>首先强调工作的了解与兴趣，不了解如何面试，再好好了解一下</h4><h4 id="操作系统linux"><a href="#操作系统linux" class="headerlink" title="操作系统linux"></a>操作系统linux</h4><h4 id="网络-ip-tcp-http最大的差别"><a href="#网络-ip-tcp-http最大的差别" class="headerlink" title="网络 ip tcp http最大的差别"></a>网络 ip tcp http最大的差别</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">TCP/IP是网络层中的传输层协议，主要负责数据的收发，</span><br><span class="line">HTTP是网络层中的应用层协议，是负责管理TCP/IP在万维网中传输数据过程中应该遵循哪些规定。</span><br><span class="line">IP协议位于网络层</span><br><span class="line">TCP协议位于传输层</span><br><span class="line">HTTP协议则位于应用层</span><br></pre></td></tr></table></figure>
+
+<h4 id="java多线程的实现-2种-继承与实现"><a href="#java多线程的实现-2种-继承与实现" class="headerlink" title="java多线程的实现 2种 继承与实现"></a>java多线程的实现 2种 继承与实现</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1)继承Thread类创建线程</span><br><span class="line">Thread类本质上是实现了Runnable接口的一个实例，代表一个线程的实例。启动线程的唯一方法就是通过Thread类的start()实例方法。start()方法是一个native方法，它将启动一个新线程，并执行run()方法。这种方式实现多线程很简单，通过自己的类直接extend Thread，并复写run()方法，就可以启动新线程并执行自己定义的run()方法。</span><br><span class="line">2)实现Runnable接口创建线程</span><br><span class="line">如果自己的类已经extends另一个类，就无法直接extends Thread，此时，可以实现一个Runnable接口</span><br><span class="line">3)实现Callable接口通过FutureTask包装器来创建Thread线程</span><br><span class="line">4)使用ExecutorService、Callable、Future实现有返回结果的线程</span><br></pre></td></tr></table></figure>
+
+<h4 id="过滤器与拦截器"><a href="#过滤器与拦截器" class="headerlink" title="过滤器与拦截器"></a>过滤器与拦截器</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1) 过滤器(Filter)：它依赖于servlet容器。在实现上，基于函数回调，它可以对几乎所有请求进行过滤，但是缺点是一个过滤器实例只能在容器初始化时调用一次。使用过滤器的目的，是用来做一些过滤操作，获取我们想要获取的数据，比如：在Javaweb中，对传入的request、response提前过滤掉一些信息，或者提前设置一些参数，然后再传入servlet或者Controller进行业务逻辑操作。通常用的场景是：在过滤器中修改字符编码（CharacterEncodingFilter）、在过滤器中修改HttpServletRequest的一些参数（XSSFilter(自定义过滤器)），如：过滤低俗文字、危险字符等。</span><br><span class="line">2) 拦截器（Interceptor）：它依赖于web框架，在SpringMVC中就是依赖于SpringMVC框架。在实现上,基于Java的反射机制，属于面向切面编程（AOP）的一种运用，就是在service或者一个方法前，调用一个方法，或者在方法后，调用一个方法，比如动态代理就是拦截器的简单实现，在调用方法前打印出字符串（或者做其它业务逻辑的操作），也可以在调用方法后打印出字符串，甚至在抛出异常的时候做业务逻辑的操作。由于拦截器是基于web框架的调用，因此可以使用Spring的依赖注入（DI）进行一些业务操作，同时一个拦截器实例在一个controller生命周期之内可以多次调用。但是缺点是只能对controller请求进行拦截，对其他的一些比如直接访问静态资源的请求则没办法进行拦截处理。</span><br></pre></td></tr></table></figure>
+
+<h4 id="数据库索引什么时候需要建立"><a href="#数据库索引什么时候需要建立" class="headerlink" title="数据库索引什么时候需要建立"></a>数据库索引什么时候需要建立</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">在建立表结构时，根据字段的查询频率设置索引，当然如果设置了主键也会建立索引。</span><br><span class="line">在经常需要搜索的列上，可以加快搜索的速度:</span><br><span class="line">（1）在作为主键的列上，强制该列的唯一性和组织表中数据的排列结构；</span><br><span class="line">（2）在经常用在连接的列上，这些列主要是一些外键，可以加快连接的速度；</span><br><span class="line">（3）在经常需要根据范围进行搜索的列上创建索引，因为索引已经排序，其指定的范围是连续的；</span><br><span class="line">（4）在经常需要排序的列上创建索引，因为索引已经排序，这样查询可以利用索引的排序，加快排序查询时间；</span><br><span class="line">（5）在经常使用在WHERE子句中的列上面创建索引，加快条件的判断速度。</span><br></pre></td></tr></table></figure>
+
+<h4 id="一瓶糖，一瓶盐，前后挖一勺放入对方瓶子里，瓶子里糖的量和盐的量是否相等？"><a href="#一瓶糖，一瓶盐，前后挖一勺放入对方瓶子里，瓶子里糖的量和盐的量是否相等？" class="headerlink" title="一瓶糖，一瓶盐，前后挖一勺放入对方瓶子里，瓶子里糖的量和盐的量是否相等？"></a>一瓶糖，一瓶盐，前后挖一勺放入对方瓶子里，瓶子里糖的量和盐的量是否相等？</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">采用极限的思维方式，假设把全部的盐放在糖里，再把糖罐里的取出一半在盐里，这样下来，两个的成分是一样的。</span><br></pre></td></tr></table></figure>
+
+<h4 id="一页英文单词手抄，找出最有可能出错的10个地方"><a href="#一页英文单词手抄，找出最有可能出错的10个地方" class="headerlink" title="一页英文单词手抄，找出最有可能出错的10个地方"></a>一页英文单词手抄，找出最有可能出错的10个地方</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">同学的回答： 重复出现，相同的前缀后缀，成分相近的比较</span><br><span class="line">字母个数超过7个的单词...</span><br></pre></td></tr></table></figure>
+
+<h4 id="大搜的性能"><a href="#大搜的性能" class="headerlink" title="大搜的性能"></a>大搜的性能</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">同学的回答：1准确相关度 2来源 3联想搜索 4时间新鲜度 5相关学科 </span><br><span class="line"></span><br><span class="line">大数据推荐</span><br></pre></td></tr></table></figure>
+
+<p>评价：偏产品经理视角？技术视角呢？ 比如搜索的速度…</p>
+<hr>
+<p>自我介绍</p>
+<p>项目介绍</p>
+<ul>
+<li>Socket编程以及都用到了哪些api</li>
+</ul>
+<p>数据库查询语句？</p>
+<p>tcp与udp的区别？他们处于五层架构中的哪一层？</p>
+<p>网络io模型？</p>
+<p>内存的分配方式？</p>
+<p>解释下“死锁”？以及死锁产生的必要条件？如何避免死锁？</p>
+<p>你觉得性能测试都应该测试啥性能？</p>
+<p>软件测试都有哪些方法？</p>
+<p>完全二叉树？</p>
+<p>判断链表是否有环，如何找到环的入口？</p>
 
       
     </div>
@@ -538,8 +605,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -556,7 +632,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -578,7 +654,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -635,6 +711,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#int-与Integer的区别与联系"><span class="nav-number">1.</span> <span class="nav-text">int 与Integer的区别与联系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#wait-sleep的区别-哪个有锁"><span class="nav-number">2.</span> <span class="nav-text">wait sleep的区别 哪个有锁</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#泛型的原理"><span class="nav-number">3.</span> <span class="nav-text">泛型的原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#定位哪个cpu下载过高"><span class="nav-number">4.</span> <span class="nav-text">定位哪个cpu下载过高</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#copy哪种方法最快？还有哪些方法，速度怎样"><span class="nav-number">5.</span> <span class="nav-text">copy哪种方法最快？还有哪些方法，速度怎样</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#举例线程安全的以及异步与同步？"><span class="nav-number">6.</span> <span class="nav-text">举例线程安全的以及异步与同步？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b树与b-树，以及为什么使用b-树"><span class="nav-number">7.</span> <span class="nav-text">b树与b+树，以及为什么使用b+树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试接口功能测试时，get-post的区别"><span class="nav-number">8.</span> <span class="nav-text">测试接口功能测试时，get post的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#磁盘io与内存io？"><span class="nav-number">9.</span> <span class="nav-text">磁盘io与内存io？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#http流程"><span class="nav-number">10.</span> <span class="nav-text">http流程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在浏览器中输入-www-baidu-com-后执行的全部过程"><span class="nav-number">11.</span> <span class="nav-text">在浏览器中输入 www.baidu.com 后执行的全部过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三次握手"><span class="nav-number">12.</span> <span class="nav-text">三次握手</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四次挥手"><span class="nav-number">13.</span> <span class="nav-text">四次挥手</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#http-6个状态码"><span class="nav-number">14.</span> <span class="nav-text">http 6个状态码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#讲一讲，线程与进程的区别"><span class="nav-number">15.</span> <span class="nav-text">讲一讲，线程与进程的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#请说明重载（Overload）和重写（Override）的区别。重载的方法能否根据返回类型进行区分？"><span class="nav-number">16.</span> <span class="nav-text">请说明重载（Overload）和重写（Override）的区别。重载的方法能否根据返回类型进行区分？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#首先强调工作的了解与兴趣，不了解如何面试，再好好了解一下"><span class="nav-number">17.</span> <span class="nav-text">首先强调工作的了解与兴趣，不了解如何面试，再好好了解一下</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#操作系统linux"><span class="nav-number">18.</span> <span class="nav-text">操作系统linux</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#网络-ip-tcp-http最大的差别"><span class="nav-number">19.</span> <span class="nav-text">网络 ip tcp http最大的差别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#java多线程的实现-2种-继承与实现"><span class="nav-number">20.</span> <span class="nav-text">java多线程的实现 2种 继承与实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#过滤器与拦截器"><span class="nav-number">21.</span> <span class="nav-text">过滤器与拦截器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据库索引什么时候需要建立"><span class="nav-number">22.</span> <span class="nav-text">数据库索引什么时候需要建立</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一瓶糖，一瓶盐，前后挖一勺放入对方瓶子里，瓶子里糖的量和盐的量是否相等？"><span class="nav-number">23.</span> <span class="nav-text">一瓶糖，一瓶盐，前后挖一勺放入对方瓶子里，瓶子里糖的量和盐的量是否相等？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一页英文单词手抄，找出最有可能出错的10个地方"><span class="nav-number">24.</span> <span class="nav-text">一页英文单词手抄，找出最有可能出错的10个地方</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#大搜的性能"><span class="nav-number">25.</span> <span class="nav-text">大搜的性能</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
