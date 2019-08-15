@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="线程和进程,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Life is a great big canvas, and you should throw all the paint on it you can.       秋招复习些基础知识。">
+<meta name="keywords" content="线程和进程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java基础知识：线程和进程">
+<meta property="og:url" content="http://ytsjh.top/2019/08/15/java基础知识：线程和进程/index.html">
+<meta property="og:site_name" content="Tong&#39;s Blog">
+<meta property="og:description" content="Life is a great big canvas, and you should throw all the paint on it you can.       秋招复习些基础知识。">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://ytsjh.top/myimages/%E7%BA%BF%E7%A8%8B.jpg">
+<meta property="og:updated_time" content="2019-08-15T08:59:40.031Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java基础知识：线程和进程">
+<meta name="twitter:description" content="Life is a great big canvas, and you should throw all the paint on it you can.       秋招复习些基础知识。">
+<meta name="twitter:image" content="http://ytsjh.top/myimages/%E7%BA%BF%E7%A8%8B.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://ytsjh.top/2019/08/15/java基础知识：线程和进程/">
+
+
+
+
+
+  <title>java基础知识：线程和进程 | Tong's Blog</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband">
+	<a href="https://github.com/YTTong" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+	</div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Tong's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Less is more.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            Commonweal 404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ytsjh.top/2019/08/15/java基础知识：线程和进程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="殷彤">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/yt.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tong's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">java基础知识：线程和进程</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-15T16:00:30+08:00">
+                2019-08-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java基础/" itemprop="url" rel="index">
+                    <span itemprop="name">Java基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote class="blockquote-center">Life is a great big canvas, and you should throw all the paint on it you can.   </blockquote> 
+
+<p><img src="/myimages/%E7%BA%BF%E7%A8%8B.jpg" alt></p>
+<p>秋招复习些基础知识。</p>
+<a id="more"></a> 
+
+<h1 id="Java基础知识：线程"><a href="#Java基础知识：线程" class="headerlink" title="Java基础知识：线程"></a><center>Java基础知识：线程</center></h1><h2 id="什么是线程和进程？"><a href="#什么是线程和进程？" class="headerlink" title="什么是线程和进程？"></a>什么是线程和进程？</h2><p>线程是指程序在执行过程中，能够执行程序代码的一个执行单元。在Java语言中，线程有4种状态：运行、就绪、挂起和结束。  进程是指一段正在执行的程序。</p>
+<p>线程被称为轻量级进程，它是程序执行的最小单元，一个进程可以拥有多个线程，各个线程之间共享程序的内存空间（代码块、数据段和堆空间）及一些进程级的资源（例如打开的文件），但是各个线程拥有自己的栈空间。  </p>
+<h2 id="进程和线程的区别"><a href="#进程和线程的区别" class="headerlink" title="进程和线程的区别"></a>进程和线程的区别</h2><p>对于进程来说，子进程是父进程的复制品，从父进程那里获得父进程的数据空间，堆和栈的复制品。</p>
+<p>而线程，相对于进程而言，是一个更加接近于执行体的概念，可以和同进程的其他线程之间直接共享数据，而且拥有自己的栈空间，拥有独立序列。</p>
+<p>共同点： 它们都能提高程序的并发度，提高程序运行效率和响应时间。线程和进程在使用上各有优缺点。 线程执行开销比较小，但不利于资源的管理和保护，而进程相反。同时，线程适合在SMP机器上运行，而进程可以跨机器迁移。</p>
+<p>他们之间根本区别在于 多进程中每个进程有自己的地址空间，线程则共享地址空间。所有其他区别都是因为这个区别产生的。比如说： </p>
+<ol>
+<li>速度。线程产生的速度快，通讯快，切换快，因为他们处于同一地址空间。 </li>
+<li>线程的资源利用率好。 </li>
+<li>线程使用公共变量或者内存的时候需要同步机制，但进程不用。</li>
+</ol>
+<h2 id="进程之间的通信方式"><a href="#进程之间的通信方式" class="headerlink" title="进程之间的通信方式"></a>进程之间的通信方式</h2><h3 id="共享存储器系统"><a href="#共享存储器系统" class="headerlink" title="共享存储器系统"></a>共享存储器系统</h3><p>在该系统中，相互通信的进程共享某些数据结构或共享存储区，进程之间能通过这些空间进行通信。</p>
+<ul>
+<li><p>基于共享数据结构的通信方式</p>
+<p>仅适用于传递少量的数据，通信效率低，属于低级通信</p>
+</li>
+<li><p>基于共享存储区的通信方式</p>
+<p>数据的形式和位置，访问控制都由进程负责，属于高级通信</p>
+</li>
+</ul>
+<h3 id="管道通信系统"><a href="#管道通信系统" class="headerlink" title="管道通信系统"></a>管道通信系统</h3><p>用于连接一个读进程和一个写进程以实现它们之间通信的一个共享文件，pipe文件</p>
+<p>以字符流的形式将大量数据送入管道</p>
+<ul>
+<li>互斥，当一个进程正在对pipe执行读写操作时，其它进程必须等待</li>
+<li>同步，当写进程（读）把一定数量的数据写入pipe，便去睡眠等待，直到读进程（写）取走数据后再把它唤醒</li>
+<li>确认对方是否存在，只有确定了对方已存在时才能进行通信</li>
+</ul>
+<h3 id="消息队列"><a href="#消息队列" class="headerlink" title="消息队列"></a>消息队列</h3><p>以格式化的消息为单位，将通信的数据封装在消息中，并利用操作系统提供的一组通信命令，在进程间进行消息传递，完成进程间的数据交换。属于高级通信。</p>
+<ul>
+<li>直接通信方式：直接把消息发给目标进程</li>
+<li>间接通信方式：通过共享中间实体</li>
+</ul>
+<h3 id="客户端-服务器系统-！！！"><a href="#客户端-服务器系统-！！！" class="headerlink" title="客户端-服务器系统    ！！！"></a>客户端-服务器系统    ！！！</h3><ul>
+<li><p>套接字</p>
+<p>同一主机上多个应用程序之间的通信，为了解决多对进程同时通信时端口和物理路线的多路复用问题</p>
+<p>一个套接字就是一个通信标识类型的数据结构，包含：通信目的的地址、通信使用的端口号、通信网络的传输协议、进程所在的网络地址、针对客户或服务器程序提供的不同系统调用等</p>
+<ul>
+<li>基于文件型：一个套接字关联到一个特殊的文件，通信双方通过对这个特殊文件的读写实现通信</li>
+<li>基于网络型：非对称方式通信，通信双方运行在不同主机的网络环境下，被分配了一对套接字，一个属于接收进程，一个属于发送进程。发送进程发出连接请求时，随机申请一个套接字，主机为之分配一个端口，与该套接字绑定，不再分配给其他进程。接收进程拥有全局公认的套接字和指定的端口，并通过监听端口等待客户请求。</li>
+</ul>
+</li>
+<li><p>远程过程调用和远程方法调用</p>
+<p>RPC是一个通信协议，用于通过网络连接的系统。该协议允许允许于一台主机系统上的进程调用另一台主机系统上的进程。负责处理远程过程调用的进程有两个：</p>
+<ul>
+<li><p>本地客户进程</p>
+</li>
+<li><p>远程服务器进程</p>
+<p>主要负责在网络间的消息传递，一般情况，两进程处于阻塞状态，等待消息。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="线程之间的通信方式"><a href="#线程之间的通信方式" class="headerlink" title="线程之间的通信方式"></a>线程之间的通信方式</h2><h3 id="传统的通信方式"><a href="#传统的通信方式" class="headerlink" title="传统的通信方式"></a>传统的通信方式</h3><p>使用Object类的wait()和notify()方法</p>
+<p><em>Object</em>类提供了线程间通信的方法：<em>wait()</em>、<em>notify()</em>、<em>notifyaAl()</em>，它们是多线程通信的基础，而这种实现方式的思想自然是线程间通信。 </p>
+<p>wait()：导致当前线程等待，直到其他线程调用该同步监视器的notify()方法或notifyAll()方法来唤醒该线程</p>
+<p>notify()：唤醒在此同步监听器上等待的单个线程</p>
+<p>notifyAll()：唤醒在此同步监听器上等待的所有线程</p>
+<h3 id="使用Condition控制线程通信"><a href="#使用Condition控制线程通信" class="headerlink" title="使用Condition控制线程通信"></a>使用Condition控制线程通信</h3><p>使用Condition可以让已经得到Lock对象却无法继续执行的线程释放Lock对象，Condition对象也可以唤醒其他处于等待的线程</p>
+<p>await()：导致当前线程等待，直到其他线程调用该Condition的signal()方法或signalAll()方法来唤醒该线程</p>
+<p>signal()：唤醒在此Lock对象上等待的单个线程。唤醒哪个线程选择是任意的</p>
+<p>signalAll()：唤醒在此Lock对象上等待的所有线程</p>
+<h3 id="使用阻塞队列控制线程通信"><a href="#使用阻塞队列控制线程通信" class="headerlink" title="使用阻塞队列控制线程通信"></a>使用阻塞队列控制线程通信</h3><p>BlockingQueue阻塞队列：当生产者线程试图向BlockingQueue中放入元素时，如果该队列已满，则该线程被阻塞；当消费者线程试图从BlockingQueue中取出元素时，如果该队列已空，则该线程被阻塞。</p>
+<p>提供两种支持阻塞的方法：</p>
+<ul>
+<li><p>put(E e)：将E元素放入BlockingQueue中，如果该队列的元素已满，阻塞该线程</p>
+</li>
+<li><p>take()：从BlockingQueue的头部取出元素，如果该队列的元素为空，阻塞该线程</p>
+</li>
+<li><p>也可以用Queue接口中的方法，对应关系如下表：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="center">抛出异常</th>
+<th align="center">不同返回值</th>
+<th align="center">阻塞线程</th>
+<th align="center">指定超时时长</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>队尾插入元素</td>
+<td align="center">add(e)</td>
+<td align="center">offer(e)</td>
+<td align="center">put(e)</td>
+<td align="center">offer(e,tiime,unit)</td>
+</tr>
+<tr>
+<td>队头删除元素</td>
+<td align="center">remove()</td>
+<td align="center">poll()</td>
+<td align="center">take()</td>
+<td align="center">poll(time,unit)</td>
+</tr>
+<tr>
+<td>获取、不删除元素</td>
+<td align="center">element()</td>
+<td align="center">peek()</td>
+<td align="center">无</td>
+<td align="center">无</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h2 id="为什么要使用多线程？"><a href="#为什么要使用多线程？" class="headerlink" title="为什么要使用多线程？"></a>为什么要使用多线程？</h2><ul>
+<li>使用多线程可以减少程序的响应时间；</li>
+<li>与进程相比，线程的创建和切换开销更小；</li>
+<li>多CPU或多核计算机本身就具有执行多线程的能力，如果使用单个线程，将无法重复利用计算机资源，造成资源的巨大浪费；</li>
+<li>使用多线程能简化程序的结构，使程序便于理解和维护。</li>
+</ul>
+<h2 id="实现同步的方式"><a href="#实现同步的方式" class="headerlink" title="实现同步的方式"></a>实现同步的方式</h2><p><a href="https://www.jianshu.com/p/1296015f9efc" target="_blank" rel="noopener">https://www.jianshu.com/p/1296015f9efc</a> </p>
+<ul>
+<li>同步方法 </li>
+<li>同步代码块</li>
+<li>使用特殊域变量(volatile)实现线程同步</li>
+<li>使用重入锁实现线程同步</li>
+<li>使用局部变量实现线程同步</li>
+<li>使用阻塞队列实现线程同步</li>
+<li>使用原子变量实现线程同步</li>
+</ul>
+<p>参考：《Java程序员面试笔试宝典》4.10.5</p>
+<h2 id="同步方法和同步代码块的区别是什么？"><a href="#同步方法和同步代码块的区别是什么？" class="headerlink" title="同步方法和同步代码块的区别是什么？"></a>同步方法和同步代码块的区别是什么？</h2><p>同步方法默认用this或者当前类class对象作为锁；  同步代码块可以选择以什么来加锁，比同步方法要更细颗粒度，我们可以选择只同步会发生同步问题的部分代码而不是整个方法。 </p>
+<h2 id="如何实现多线程？"><a href="#如何实现多线程？" class="headerlink" title="如何实现多线程？"></a>如何实现多线程？</h2><ul>
+<li>继承Thread类，重写run()方法</li>
+<li>实现Runnable接口，实现该接口的run()方法</li>
+<li>实现Callable接口，重写call()方法</li>
+<li>实现Runnable接口这种方式更受欢迎，因为这不需要继承Thread类。在应用设计中已经继承了别的对象的情况下，这需要多继承（而Java不支持多继承），只能实现接口。同时，线程池也是非常高效的，很容易实现和使用。</li>
+</ul>
+<h2 id="什么是线程池"><a href="#什么是线程池" class="headerlink" title="什么是线程池"></a>什么是线程池</h2><p>在面向对象编程中，创建和销毁对象是很费时间的，因为创建一个对象要获取内存资源或者其它更多资源。<br>在Java中更是如此，虚拟机将试图跟踪每一个对象，以便能够在对象销毁后进行垃圾回收。<br>所以提高服务程序效率的一个手段就是尽可能减少创建和销毁对象的次数，特别是一些很耗资源的对象创建和销毁，这就是”池化资源”技术产生的原因。<br>线程池顾名思义就是事先创建若干个可执行的线程放入一个池（容器）中，需要的时候从池中获取线程不用自行创建，使用完毕不需要销毁线程而是放回池中，从而减少创建和销毁线程对象的开销。<br>Java 5+中的Executor接口定义一个执行线程的工具。它的子类型即线程池接口是ExecutorService。<br>要配置一个线程池是比较复杂的，尤其是对于线程池的原理不是很清楚的情况下，因此在工具类Executors面提供了一些静态工厂方法，生成一些常用的线程池，如下所示： </p>
+<ul>
+<li>newSingleThreadExecutor：创建一个单线程的线程池。这个线程池只有一个线程在工作，也就是相当于单线程串行执行所有任务。如果这个唯一的线程因为异常结束，那么会有一个新的线程来替代它。此线程池保证所有任务的执行顺序按照任务的提交顺序执行。</li>
+<li>newFixedThreadPool：创建固定大小的线程池。每次提交一个任务就创建一个线程，直到线程达到线程池的最大大小。线程池的大小一旦达到最大值就会保持不变，如果某个线程因为执行异常而结束，那么线程池会补充一个新线程。 </li>
+<li>newCachedThreadPool：创建一个可缓存的线程池。如果线程池的大小超过了处理任务所需要的线程，那么就会回收部分空闲（60秒不执行任务）的线程，当任务数增加时，此线程池又可以智能的添加新线程来处理任务。此线程池不会对线程池大小做限制，线程池大小完全依赖于操作系统（或者说JVM）能够创建的最大线程大小。 </li>
+<li>newScheduledThreadPool：创建一个大小无限的线程池。此线程池支持定时以及周期性执行任务的需求。</li>
+<li>newSingleThreadExecutor：创建一个单线程的线程池。此线程池支持定时以及周期性执行任务的需求。</li>
+</ul>
+<h2 id="run-方法和start-方法的区别"><a href="#run-方法和start-方法的区别" class="headerlink" title="run()方法和start()方法的区别"></a>run()方法和start()方法的区别</h2><p>系统通过调用线程类的start()方法来启动一个线程，此时该线程处于就绪状态，而非运行状态，意味着这个线程可以被JVM来调度执行。在调度过程中，JVM通过调用线程类的run()方法来完成实际的操作，当run()方法结束后，此线程终止。<br>如果直接调用线程类的run()方法，被当作一个普通的函数调用，程序中仍然只有主线程这一个线程，start方法能够异步地调用run()方法，但是直接调用run()方法却是同步的，因此无法达到多线程的目的。<br>因此，只有通过调用线程类的start()方法才能达到多线程的目的。</p>
+<h2 id="sleep-方法与wait-方法有什么区别"><a href="#sleep-方法与wait-方法有什么区别" class="headerlink" title="sleep()方法与wait()方法有什么区别"></a>sleep()方法与wait()方法有什么区别</h2><p>sleep()是使线程暂停执行一段时间的方法。wait()也是一种使线程暂停执行的方法。</p>
+<ul>
+<li>原理不同，sleep()方法是Thread类的静态方法，是线程用来控制自身流程的，会使此线程暂停执行一段时间，而把执行机会让给其他线程，等到计时时间一到，此线程会自动“苏醒”。wait()方法是Object类的方法，用于线程间的通信，这个方法会使当前拥有该对象锁的进程等待，直到其他线程调用notify()方法时才“醒”来。</li>
+<li>对锁的处理机制不同。sleep()方法的主要作用是让线程暂停执行一段时间，时间一到则自动恢复，不涉及线程间的通信，因此，调用sleep()方法不会释放锁。当调用wait()方法后，线程会释放掉它所占用的锁，从而使线程所在对象中的其他synchronized数据可被别的线程使用。</li>
+<li>使用区域不同。wait()方法放在同步控制方法或同步语句块中，sleep()方法可放在任何地方使用，不会释放“锁标志”容易导致死锁问题的发生。</li>
+</ul>
+<h2 id="sleep-方法与yield-方法的区别？"><a href="#sleep-方法与yield-方法的区别？" class="headerlink" title="sleep()方法与yield()方法的区别？"></a>sleep()方法与yield()方法的区别？</h2><ul>
+<li><p>sleep()方法给其他线程运行机会时不考虑线程的优先级，会给低优先级的线程以运行的机会，而yield()方法只会个相同优先级或更高优先级的线程以运行的机会</p>
+</li>
+<li><p>线程执行sleep()方法后会转入阻塞状态，所以，执行sleep()方法的线程在指定的时间内肯定不会被执行，而yield()方法只是使当前线程重新回到可执行状态，所以执行yield()方法的线程有可能在进入到可执行状态后马上又被执行。</p>
+</li>
+<li><p>sleep()方法声明抛出InterruptedException，而yield()方法没有声明任何异常。</p>
+</li>
+<li><p>sleep()方法比yield()方法具有更好的可移植性。（操作系统）</p>
+</li>
+</ul>
+<h2 id="join-方法的作用"><a href="#join-方法的作用" class="headerlink" title="join()方法的作用"></a>join()方法的作用</h2><p>让调用该方法的线程在执行完run()方法后，再执行join()方法后面的代码。就是将两个线程合并，用于实现同步功能。</p>
+<h2 id="线程从创建到死亡的几种状态都有哪些？"><a href="#线程从创建到死亡的几种状态都有哪些？" class="headerlink" title="线程从创建到死亡的几种状态都有哪些？"></a>线程从创建到死亡的几种状态都有哪些？</h2><ol>
+<li>新建( new )：新创建了一个线程对象。 </li>
+<li>可运行( runnable )：线程对象创建后，其他线程(比如 main 线程）调用了该对象 的 start ()方法。该状态的线程位于可运行线程池中，等待被线程调度选中，获 取 cpu 的使用权 。  </li>
+<li>运行( running )：可运行状态( runnable )的线程获得了 cpu 时间片（ timeslice ） ，执行程序代码。 </li>
+<li>阻塞( block )：阻塞状态是指线程因为某种原因放弃了 cpu 使用权，也即让出了 cpu timeslice ，暂时停止运行。直到线程进入可运行( runnable )状态，才有 机会再次获得 cpu timeslice 转到运行( running )状态。<br>阻塞的情况分三种：<br>(一). 等待阻塞：运行( running )的线程执行 o . wait ()方法， JVM 会把该线程放 入等待队列( waitting queue )中。<br>(二). 同步阻塞：运行( running )的线程在获取对象的同步锁时，若该同步锁 被别的线程占用，则 JVM 会把该线程放入锁池( lock pool )中。<br>(三). 其他阻塞: 运行( running )的线程执行 Thread . sleep ( long ms )或 t . join ()方法，或者发出了 I / O 请求时， JVM 会把该线程置为阻塞状态。 当 sleep ()状态超时、 join ()等待线程终止或者超时、或者 I / O 处理完毕时，线程重新转入可运行( runnable )状态。  </li>
+<li>死亡( dead )：线程 run ()、 main () 方法执行结束，或者因异常退出了 run ()方法，则该线程结束生命周期。死亡的线程不可再次复生。 </li>
+</ol>
+<h2 id="什么是生产者消费者模式？"><a href="#什么是生产者消费者模式？" class="headerlink" title="什么是生产者消费者模式？"></a>什么是生产者消费者模式？</h2><p>生产者消费者问题是线程模型中的经典问题：<br>生产者和消费者在同一时间段内共用同一存储空间，生产者向空间里生产数据，而消费者取走数据。<br>优点：支持并发、解耦。 </p>
+<h2 id="终止线程的方法有哪些？"><a href="#终止线程的方法有哪些？" class="headerlink" title="终止线程的方法有哪些？"></a>终止线程的方法有哪些？</h2><p>不建议使用stop方法（会释放已经锁定的所有监视资源）和suspend方法（容易发生死锁）来终止线程的执行。</p>
+<p>建议采用的方法是：让线程自行结束进入Dead状态。线程进入Dead状态，即执行完run()方法，如果想停止一个线程的执行，就要提供某种方式让线程能够自动结束run()方法的执行。在实现时，可以通过设置一个flag标志来控制循环是否执行，通过这种方法来让线程离开run()方法从而终止线程。</p>
+<h2 id="synchronized与Lock的异同？"><a href="#synchronized与Lock的异同？" class="headerlink" title="synchronized与Lock的异同？"></a>synchronized与Lock的异同？</h2><p>主要相同点：Lock能完成synchronized所实现的所有功能<br>主要不同点：Lock有比synchronized更精确的线程语义和更好的性能。synchronized会自动释放锁，而Lock一定要求程序员手工释放，并且必须在finally从句中释放。<br>参考：《Java程序员面试笔试宝典》4.10.8</p>
+<h2 id="什么是守护线程？"><a href="#什么是守护线程？" class="headerlink" title="什么是守护线程？"></a>什么是守护线程？</h2><p>Java提供两种线程：守护线程和用户线程，守护线程又被称为“服务线程”或“后台线程”。<br>指在程序运行时在后台提供一种通用服务的线程，这种线程并不属于程序中不可或缺的部分。<br>任何一个守护线程都是整个JVM中所有非守护线程的“保姆”。<br>所有非守护线程终止，即使存在守护线程，进程运行终止。<br>例子：垃圾回收器，只要JVM启动，它始终在运行，实时监控和管理系统中可以被回收的资源。</p>
+
+      
+    </div>
+    
+    
+    
+	
+    
+	
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    殷彤
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="http://ytsjh.top/2019/08/15/java基础知识：线程和进程/" title="java基础知识：线程和进程">http://ytsjh.top/2019/08/15/java基础知识：线程和进程/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/线程和进程/" rel="tag"># 线程和进程</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/08/java基础知识：单例模式/" rel="next" title="java基础知识：单例模式">
+                <i class="fa fa-chevron-left"></i> java基础知识：单例模式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NTA2MC8yMTU3Nw=="></div>
+    </div>
+
+  
+
+
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/yt.jpg" alt="殷彤">
+            
+              <p class="site-author-name" itemprop="name">殷彤</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/YTTong" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="791383829@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://youtube.com" target="_blank" title="YouTube">
+                      
+                        <i class="fa fa-fw fa-youtube"></i>YouTube</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java基础知识：线程"><span class="nav-number">1.</span> <span class="nav-text">Java基础知识：线程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是线程和进程？"><span class="nav-number">1.1.</span> <span class="nav-text">什么是线程和进程？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程和线程的区别"><span class="nav-number">1.2.</span> <span class="nav-text">进程和线程的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程之间的通信方式"><span class="nav-number">1.3.</span> <span class="nav-text">进程之间的通信方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#共享存储器系统"><span class="nav-number">1.3.1.</span> <span class="nav-text">共享存储器系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#管道通信系统"><span class="nav-number">1.3.2.</span> <span class="nav-text">管道通信系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#消息队列"><span class="nav-number">1.3.3.</span> <span class="nav-text">消息队列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#客户端-服务器系统-！！！"><span class="nav-number">1.3.4.</span> <span class="nav-text">客户端-服务器系统    ！！！</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程之间的通信方式"><span class="nav-number">1.4.</span> <span class="nav-text">线程之间的通信方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#传统的通信方式"><span class="nav-number">1.4.1.</span> <span class="nav-text">传统的通信方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用Condition控制线程通信"><span class="nav-number">1.4.2.</span> <span class="nav-text">使用Condition控制线程通信</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用阻塞队列控制线程通信"><span class="nav-number">1.4.3.</span> <span class="nav-text">使用阻塞队列控制线程通信</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么要使用多线程？"><span class="nav-number">1.5.</span> <span class="nav-text">为什么要使用多线程？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现同步的方式"><span class="nav-number">1.6.</span> <span class="nav-text">实现同步的方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#同步方法和同步代码块的区别是什么？"><span class="nav-number">1.7.</span> <span class="nav-text">同步方法和同步代码块的区别是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何实现多线程？"><span class="nav-number">1.8.</span> <span class="nav-text">如何实现多线程？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是线程池"><span class="nav-number">1.9.</span> <span class="nav-text">什么是线程池</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#run-方法和start-方法的区别"><span class="nav-number">1.10.</span> <span class="nav-text">run()方法和start()方法的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sleep-方法与wait-方法有什么区别"><span class="nav-number">1.11.</span> <span class="nav-text">sleep()方法与wait()方法有什么区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sleep-方法与yield-方法的区别？"><span class="nav-number">1.12.</span> <span class="nav-text">sleep()方法与yield()方法的区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#join-方法的作用"><span class="nav-number">1.13.</span> <span class="nav-text">join()方法的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程从创建到死亡的几种状态都有哪些？"><span class="nav-number">1.14.</span> <span class="nav-text">线程从创建到死亡的几种状态都有哪些？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是生产者消费者模式？"><span class="nav-number">1.15.</span> <span class="nav-text">什么是生产者消费者模式？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#终止线程的方法有哪些？"><span class="nav-number">1.16.</span> <span class="nav-text">终止线程的方法有哪些？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#synchronized与Lock的异同？"><span class="nav-number">1.17.</span> <span class="nav-text">synchronized与Lock的异同？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是守护线程？"><span class="nav-number">1.18.</span> <span class="nav-text">什么是守护线程？</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">true</span>
+
+  
+</div>
+
+<!--
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+-->
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
