@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="计算机网络,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="If a thing is worth doing it is worth worth doing well.     秋招准备进行中…">
+<meta name="keywords" content="计算机网络">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络复习">
+<meta property="og:url" content="http://ytsjh.top/2019/08/16/计算机网络复习/index.html">
+<meta property="og:site_name" content="Tong&#39;s Blog">
+<meta property="og:description" content="If a thing is worth doing it is worth worth doing well.     秋招准备进行中…">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://ytsjh.top/myimages/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C.jpg">
+<meta property="og:updated_time" content="2019-08-16T02:17:01.268Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="计算机网络复习">
+<meta name="twitter:description" content="If a thing is worth doing it is worth worth doing well.     秋招准备进行中…">
+<meta name="twitter:image" content="http://ytsjh.top/myimages/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://ytsjh.top/2019/08/16/计算机网络复习/">
+
+
+
+
+
+  <title>计算机网络复习 | Tong's Blog</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband">
+	<a href="https://github.com/YTTong" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+	</div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Tong's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Less is more.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            Commonweal 404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ytsjh.top/2019/08/16/计算机网络复习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="殷彤">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/yt.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tong's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">计算机网络复习</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-16T09:51:13+08:00">
+                2019-08-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/计算机网络/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机网络</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote class="blockquote-center">If a thing is worth doing it is worth worth doing well. </blockquote> 
+
+<p><img src="/myimages/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C.jpg" alt></p>
+<p>秋招准备进行中…</p>
+<a id="more"></a>
+
+<h1 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a><center>计算机网络</center></h1><h2 id="HTTPS和HTTP的区别"><a href="#HTTPS和HTTP的区别" class="headerlink" title="HTTPS和HTTP的区别"></a>HTTPS和HTTP的区别</h2><ol>
+<li><p>http是HTTP协议运行在TCP上。所有传输的内容都是明文，客户端和服务端都无法验证对方的身份。</p>
+</li>
+<li><p>https是HTTP运行在SSL/TLS之上，SSL/TLS运行在TCP上，所有传输的内容都是经过加密的，加密采用对称加密。但是对称加密的密钥用服务器方的证书进行了非对称加密。</p>
+</li>
+<li><p>http是超文本传输协议，信息是明文传输，https则是具有安全性的ssl加密传输协议。</p>
+</li>
+<li><p>http和https使用的是完全不同的连接方式，用的端口也不一样，前者是80，后者是443</p>
+</li>
+<li><p>http无状态。</p>
+</li>
+</ol>
+<h2 id="HTTP-6个状态码"><a href="#HTTP-6个状态码" class="headerlink" title="HTTP 6个状态码"></a>HTTP 6个状态码</h2><p>200 请求成功，一切正常<br>302 请求重定向<br>304 服务器端资源未改动，通知客户查找本地资源<br>404 客户端访问资源不存在<br>500 服务器内部出错</p>
+<h3 id="临时响应"><a href="#临时响应" class="headerlink" title="临时响应"></a>临时响应</h3><p>1xx（临时响应）<br>    表示临时响应并需要请求者继续执行</p>
+<p>100（继续）：请求者应当继续提出请求。服务器返回此代码表示已经收到了请求的第一部分，正在等待其余部分<br>101（切换协议）：请求者已经要求服务器切换协议，服务器已经确认，并且准备切换。</p>
+<h3 id="成功"><a href="#成功" class="headerlink" title="成功"></a>成功</h3><p>2xx（成功） 表示成功处理了请求</p>
+<p>200（成功）：表示服务器已经成功处理了请求。<br>201（已创建）：请求成功并且服务器创建了新的资源<br>202（已接收）：服务器接收了请求，但是尚未处理<br>203（非授权信息）：服务器已经成功处理了请求，但是返回的信息可能来自另一来源<br>204（无内容）：服务器成功处理了请求，但是没有返回任何内容<br>205（重置内容）:服务器成功处理了请求，但是没有返回任何内容。与204响应不同，此响应要求请求者重置文档视图<br>206（部分内容）:服务器成功处理了部分GET请求</p>
+<h3 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h3><p>3xx（重定向）<br>    要完成请求，需要进一步操作。通常，这些状态码用来重定向。Google 建议您在每次请求中使用重定向不要超过 5 次。您可以使用网站管理员工具查看一下 Googlebot 在抓取重定向网页时是否遇到问题。诊断下的网络抓取页列出了由于重定向错误导致 Googlebot 无法抓取的网址。</p>
+<p>300(多种选择)：针对请求，服务器可执行多种操作。服务器可根据请求者 (user agent) 选择一项操作，或提供操作列表供请求者选择。</p>
+<p>301(永久移动)：请求的网页已永久移动到新位置。服务器返回此响应(对 GET 或 HEAD 请求的响应)时，会自动将请求者转到新位置。您应使用此代码告诉 Googlebot 某个网页或网站已永久移动到新位置。</p>
+<p>302(临时移动)：服务器目前从不同位置的网页响应请求，但请求者应继续使用原有位置来响应以后的请求。此代码与响应 GET 和 HEAD 请求的 301 代码类似，会自动将请求者转到不同的位置，但您不应使用此代码来告诉 Googlebot 某个网页或网站已经移动，因为 Googlebot 会继续抓取原有位置并编制索引。</p>
+<p>303(查看其他位置)请求者应当对不同的位置使用单独的 GET 请求来检索响应时，服务器返回此代码。对于除 HEAD 之外的所有请求，服务器会自动转到其他位置。</p>
+<p>304(未修改)自从上次请求后，请求的网页未修改过。服务器返回此响应时，不会返回网页内容。</p>
+<h3 id="请求错误"><a href="#请求错误" class="headerlink" title="请求错误"></a>请求错误</h3><p>4xx（请求错误）<br>    这些状态码表示请求可能出错，妨碍了服务器的处理。</p>
+<p>400(错误请求)：服务器不理解请求的语法。</p>
+<p>401(未授权)：请求要求身份验证。对于登录后请求的网页，服务器可能返回此响应。</p>
+<p>403(禁止)：服务器拒绝请求。如果您在 Googlebot 尝试抓取您网站上的有效网页时看到此状态码(您可以在 Google 网站管理员工具诊断下的网络抓取页面上看到此信息)，可能是您的服务器或主机拒绝了 Googlebot 访问。</p>
+<p>404(未找到)：服务器找不到请求的网页。例如，对于服务器上不存在的网页经常会返回此代码。</p>
+<p>405(方法禁用)：禁用请求中指定的方法。</p>
+<h3 id="服务器错误"><a href="#服务器错误" class="headerlink" title="服务器错误"></a>服务器错误</h3><p>5xx(服务器错误)<br>这些状态码表示服务器在处理请求时发生内部错误。这些错误可能是服务器本身的错误，不是请求出错。</p>
+<p>500(服务器内部错误)服务器遇到错误，无法完成请求。</p>
+<p>501(尚未实施)服务器不具备完成请求的功能。例如，服务器无法识别请求方法时可能会返回此代码。</p>
+<p>502(错误网关)服务器作为网关或代理，从上游服务器收到无效响应</p>
+<p>503(服务不可用)服务器目前无法使用(由于超载或停机维护)。通常，这只是暂时状态</p>
+<p>504(网关超时)服务器作为网关或代理，但是没有及时从上游服务器收到请求。</p>
+<p>505(HTTP 版本不受支持)服务器不支持请求中所用的 HTTP 协议版本。</p>
+<h2 id="HTTP请求头有哪些字段"><a href="#HTTP请求头有哪些字段" class="headerlink" title="HTTP请求头有哪些字段"></a>HTTP请求头有哪些字段</h2><p>Accept：浏览器可接受的MIME类型。 Accept-Charset：浏览器可接受的字符集。  </p>
+<p>Accept-Encoding：浏览器能够进行解码的数据编码方式，比如gzip。 </p>
+<p>Accept-Language：浏览器所希望的语言种类，当服务器能够提供一种以上的语言版本时要用到。 Authorization：授权信息，通常出现在对服务器发送的WWW-Authenticate头的应答中。 </p>
+<p>Connection：表示是否需要持久连接。如果Servlet看到这里的值为“Keep-Alive”，或者看到请求使用的是HTTP 1.1（HTTP 1.1默认进行持久连接），它就可以利用持久连接的优点，当页面包含多个元素时（例如Applet，图片），显著地减少下载所需要的时间。要实现这一点，Servlet需要在应答中发送一个Content-Length头，最简单的实现方法是：先把内容写入ByteArrayOutputStream，然后在正式写出内容之前计算它的大小。  </p>
+<p>Content-Length：表示请求消息正文的长度。  </p>
+<p>Cookie：设置cookie,这是最重要的请求头信息之一 From：请求发送者的email地址，由一些特殊的Web客户程序使用，浏览器不会用到它。 Host：初始URL中的主机和端口。 </p>
+<p> If-Modified-Since：只有当所请求的内容在指定的日期之后又经过修改才返回它，否则返回304“Not Modified”应答。  </p>
+<p>Pragma：指定“no-cache”值表示服务器必须返回一个刷新后的文档，即使它是代理服务器而且已经有了页面的本地拷贝。</p>
+<p>Referer：包含一个URL，用户从该URL代表的页面出发访问当前请求的页面。  </p>
+<p>User-Agent：浏览器类型，如果Servlet返回的内容与浏览器类型有关则该值非常有用。 </p>
+<p>UA-Pixels，UA-Color，UA-OS，UA-CPU：由某些版本的IE浏览器所发送的非标准的请求头，表示屏幕大小、颜色深度、操作系统和CPU类型。  </p>
+<h2 id="TCP保证可靠传输"><a href="#TCP保证可靠传输" class="headerlink" title="TCP保证可靠传输"></a>TCP保证可靠传输</h2><ol>
+<li>数据包校验</li>
+<li>超时重传机制</li>
+<li>应答机制</li>
+<li>对失序数据包重排序</li>
+<li>TCP还能提供流量控制。</li>
+</ol>
+<h2 id="三次握手和四次挥手"><a href="#三次握手和四次挥手" class="headerlink" title="三次握手和四次挥手"></a>三次握手和四次挥手</h2><p>TCP连接握手，握的就是通信双方数据原点的序列号。</p>
+<ol>
+<li>seq序号：用来标识从TCP源端向目的端发送的字节流，发起方发送数据时对此进行标记。</li>
+<li>ack确认序号：只有ACK标志位为1时，确认序号字段才有效。</li>
+<li>标志位<ol>
+<li>URG：紧急指针（Urgent Pointer）有效</li>
+<li>ACK：确认序号有效</li>
+<li>PSH：接收方应该尽快将这个报文交给应用层</li>
+<li>RST：重置连接</li>
+<li>SYN：发起一个新连接</li>
+<li>FIN：释放一个连接</li>
+</ol>
+</li>
+<li>不要将确认序号ack与ACK标志位搞混；确认方ack=发起方seq+1</li>
+</ol>
+<h3 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h3><ol>
+<li>第一握手，客户端发送SYN（seq，随机选取一个序列号作为自己的初始序号）（Synchronize Sequence Numbers）包到服务器，并进入SYN_SNET状态，等待服务器确认。</li>
+<li>第二次握手，服务器收到seq包，必须确认客户的seq，使用ack对A的数据包进行确认，因为以后收到了序列号为x的数据包，准备接收序列号是x+1的包，所以ack=x+1，同时告诉客户端自己的初始序列号。服务器进入SYN_RECV状态</li>
+<li>第三次握手，客户端收到服务器的ack与seq，向服务器发送确认包seq、ack，客户端此条消息的序列号是x+1，所以seq=x+1，而ack=y+1，ack表示客户端正准备接收服务器序列号是y+1的数据包，此包发送完毕，客户端和服务器都进入ESTABLISHED（TCP连接成功），完成三次握手</li>
+</ol>
+<h3 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h3><ol>
+<li>第一次挥手：A认为数据发送完了，需要向B发送连接释放请求。该请求只有报文头，头中携带主要参数为：<ol>
+<li>FIN=1，seq=u，此时A进入FIN-WAIT-1<ol>
+<li>FIN=1表示该报文段是一个连接释放请求。</li>
+<li>seq=u，u-1是A向B发送的最后一个字节的序号。</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>第二次挥手：B接收到连接释放请求后，会通知相应的应用程序，告诉它A向B这个方向的连接已经释放了。B进入CLOSE-WAIT，并向A发送释放的应答，其报文头：<br>ACK=1,seq=v,ack=u+1。<ol>
+<li>ACK=1，除了TCP连接请求报文段以外，TCP通信过程中所有数据报的ACK都是1，表示应答。</li>
+<li>seq=v，v-1是B向A发送的最后一个字节的序号</li>
+<li>ack=u+1,表示希望收到第u+1字节开始的报文段，并且已经成功接收到了前u个字节。<br>A收到该应答，进入FIN-WAIT-2状态，等待B发送连接释放请求。</li>
+</ol>
+</li>
+</ol>
+<p>第二次挥手完成后，A到B的连接已经释放，B不会再接收数据，A不会再发送数据。但是B到A的连接还存在，B还可以向A发送数据。</p>
+<p>3.第三次挥手：当B向A发完所有数据后，向A发送连接释放请求，请求头：FIN=1,ACK=1,seq=w，ack=u+1。</p>
+<p>4.第四次挥手：A收到释放请求，向B发送确认应答，此时A进入TIME-WAIT状态，该状态会持续2MSL时间，若该时间段内没有B的重发请求，就进入CLOSED，撤销TCB。当B收到确认应答后，也进入CLOSED，撤销TCB。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"> 三次握手 </span><br><span class="line"></span><br><span class="line">- 主机A向主机B发送TCP连接请求数据包，其中包含主机A的初始序列号seq(A)=x。（其中报文中同步标志位SYN=1，ACK=0；序号seq=x，表明传输数据时的第一个数据字节的序号是x）； </span><br><span class="line">- 主机B收到请求后，会发回连接确认数据包。（其中确认报文段中，标识位SYN=1，ACK=1，表示这是一个TCP连接响应数据报文，并含主机B的初始序列号seq(B)=y，以及B对A初始序列号的确认号ack(B)=x+1）</span><br><span class="line">- 第三次，主机A收到主机B的确认报文后，还需作出确认，即发送一个序列号seq(A)=x+1；确认号为ack(A)=y+1的报文； </span><br><span class="line"></span><br><span class="line"> 四次挥手</span><br><span class="line"></span><br><span class="line">假设主机A为客户端，主机B为服务器，其释放TCP连接的过程如下： </span><br><span class="line"></span><br><span class="line">- 首先客户端A发送一个FIN，用来关闭客户到服务器B的数据传送，然后等待服务器B的确认。其中终止标志位FIN=1，序列号seq=u。 </span><br><span class="line">- 服务器B收到这个FIN，它发回一个ACK，确认号ack为收到的序号加1。 </span><br><span class="line">- 关闭服务器B到客户端A的连接：也是发送一个FIN给客户端A。 </span><br><span class="line">- 客户端A收到FIN后，并发回一个ACK报文确认。然后经过2MSL后断开连接。</span><br><span class="line"></span><br><span class="line">MSL，最大报文段生存时间。用来处理可能丢失的最后一次的ACK确认。</span><br></pre></td></tr></table></figure>
+
+<h3 id="为什么不是两次，或者四次"><a href="#为什么不是两次，或者四次" class="headerlink" title="为什么不是两次，或者四次"></a>为什么不是两次，或者四次</h3><p>A &lt;——-&gt; B</p>
+<ol>
+<li>两次连接，就是为了防止失效的连接请求报文段被服务器接收，从而产生了错误。<br>ps:失效的连接请求，若客户端向服务端发送的连接请求丢失，客户端等待应答时间超时后，就会再次发送连接请求，此时上一个连接请求就是失效的。</li>
+</ol>
+<p>客户端的请求报文在某个网络结点长时间滞留了，以至于延误到连接释放后才到达B，本来就是一个失效的报文，但是B以为这个A又发的一个新的连接请求。于是向A发出确认报文，同一建立连接。假定不采用三次握手，那么只要B发出了确认，就建立了新的连接。</p>
+<p>但是A并没有发出连接，所以B以为自己连接建立了，一直等待A的数据，但是等不到。</p>
+<ol start="2">
+<li>四次连接，第三次已经确认了，没必要了</li>
+</ol>
+<h3 id="为什么A要先进入TINE-WAIT，等待2MSL时间才进入CLOSED"><a href="#为什么A要先进入TINE-WAIT，等待2MSL时间才进入CLOSED" class="headerlink" title="为什么A要先进入TINE-WAIT，等待2MSL时间才进入CLOSED"></a>为什么A要先进入TINE-WAIT，等待2MSL时间才进入CLOSED</h3><p>为了保证B能收到A的确认应答。 </p>
+<p>若A发完确认应答后直接进入CLOSED状态，那么如果该应答丢失，B等待超时后就会重新发送连接释放请求，但此时A已经关闭了，不会作出任何响应，因此B永远无法正常关闭。</p>
+<h2 id="如果客户端不断的发送请求连接会怎样"><a href="#如果客户端不断的发送请求连接会怎样" class="headerlink" title="如果客户端不断的发送请求连接会怎样?"></a>如果客户端不断的发送请求连接会怎样?</h2><ol>
+<li>服务器会为每一个请求建立一个链接，然后向Client端发送创建链接时的回复，然后进行等待客户端发送第三次握手数据包，这样会白白浪费资源。</li>
+<li>DDos攻击：<ol>
+<li>客户端向服务器端发送连接请求数据包</li>
+<li>服务器向客户端回复连接请求数据包，然后服务器等待客户端发送TCP/IP链接的第三次数据包</li>
+<li>如果客户端不向服务器发送最后一个数据包，则服务器需等待30s-2minutes才能将此连接进行关闭。当大量的请求只进行到第二步，然后不进行第三步，服务器又大量的资源等待第三个数据包，就会造成DDos攻击。</li>
+</ol>
+</li>
+<li>DDos预防：<ol>
+<li>关闭不必要的服务</li>
+<li>限制同时打开的SYN的半连接数目</li>
+<li>缩短SYN半连接的Time out时间</li>
+</ol>
+</li>
+</ol>
+<h2 id="TCP和UDP的区别"><a href="#TCP和UDP的区别" class="headerlink" title="TCP和UDP的区别"></a>TCP和UDP的区别</h2><p>传输控制协议（Transmission Control Proptocol）<br>用户数据报协议（User Datagram Protocal）</p>
+<ol>
+<li>TCP提供的是面向连接的，可靠的数据流传输，而UDP提供的是非面向连接的（面向报文），不可靠的数据流传输。</li>
+<li>TCP传输单位是TCP报文段，UDP传输单位是用户数据报</li>
+<li>TCP注重数据的安全，UDP数据传输快。</li>
+<li>UDP做不了流量控制</li>
+</ol>
+<h2 id="TCP和UDP常用协议"><a href="#TCP和UDP常用协议" class="headerlink" title="TCP和UDP常用协议"></a>TCP和UDP常用协议</h2><p>TCP对应的协议：</p>
+<p>（1） FTP：定义了文件传输协议，使用21端口。</p>
+<p>（2） Telnet：一种用于远程登陆的端口，使用23端口，用户可以以自己的身份远程连接到计算机上，可提供基于DOS模式下的通信服务。</p>
+<p>（3） SMTP：邮件传送协议，用于发送邮件。服务器开放的是25号端口。</p>
+<p>（4） POP3：它是和SMTP对应，POP3用于接收邮件。POP3协议所用的是110端口。</p>
+<p>（5） HTTP：是从Web服务器传输超文本到本地浏览器的传送协议。</p>
+<p>UDP对应的协议：</p>
+<p>（1） DNS：用于域名解析服务，将域名地址转换为IP地址。DNS用的是53号端口。</p>
+<p>（2） SNMP：简单网络管理协议，使用161号端口，是用来管理网络设备的。由于网络设备很多，无连接的服务就体现出其优势。</p>
+<p>（3） TFTP(Trival File Transfer Protocal)，简单文件传输协议，该协议在熟知端口69上使用UDP服务。</p>
+<h2 id="网络-ip-tcp-http最大的差别"><a href="#网络-ip-tcp-http最大的差别" class="headerlink" title="网络 ip tcp http最大的差别"></a>网络 ip tcp http最大的差别</h2><p>TCP/IP是网络层中的传输层协议，主要负责数据的收发，<br>HTTP是网络层中的应用层协议，是负责管理TCP/IP在万维网中传输数据过程中应该遵循哪些规定。<br>IP协议位于网络层<br>TCP协议位于传输层<br>HTTP协议则位于应用层</p>
+<h2 id="从输入网址到获取页面的过程"><a href="#从输入网址到获取页面的过程" class="headerlink" title="从输入网址到获取页面的过程"></a>从输入网址到获取页面的过程</h2><p>DNS解析 ；TCP连接 ；发送HTTP请求；服务器处理请求并返回HTTP报文；浏览器解析渲染页面</p>
+<p>1.查询DNS，获取域名对应的IP地址</p>
+<ol>
+<li>浏览器搜索自己的DNS缓存</li>
+<li>搜索操作系统的DNS缓存</li>
+<li>读取本地的HOST文件（本地ISP域名服务器解析）</li>
+<li>发起一个DNS的系统调用（根域名服务器）<ol>
+<li>宽带运营服务器查看本身缓存</li>
+<li>运营商服务器发起一个迭代DNS解析请求</li>
+</ol>
+</li>
+</ol>
+<p>2.浏览器获得域名对应的IP，通过IP地址找到客户端到服务端的路径。客户端发起HTTP会话到IP地址，然后通过TCP进行封装数据包，传输到网络层（三次握手）。<br>T3.CP/IP连接建立起来后，浏览器向服务器发送HTTP请求。<br>4.服务器接收到这个请求，根据路径参数，经过后端的处理生成HTML代码返回给浏览器<br>5.浏览器拿到完整的HTML页面代码开始解析和渲染<br>6.浏览器根据拿到的资源对页面进行渲染，最终得到页面</p>
+<h2 id="在浏览器中输入-www-baidu-com-后执行的全部过程"><a href="#在浏览器中输入-www-baidu-com-后执行的全部过程" class="headerlink" title="在浏览器中输入 www.baidu.com 后执行的全部过程"></a>在浏览器中输入 <a href="http://www.baidu.com/" target="_blank" rel="noopener">www.baidu.com</a> 后执行的全部过程</h2><p><a href="https://blog.csdn.net/qq_16681169/article/details/50866290" target="_blank" rel="noopener">https://blog.csdn.net/qq_16681169/article/details/50866290</a></p>
+<p>从网络模型的角度来分析问题的，主要涉及应用层：DNS,HTTP,传输层：TCP,网络层：IP和路由选择协议：RIP,OSPF(内部网关协议),BGP(外部网关协议）和数据链路层：ARP（地址解析协议，这个协议可以说在数据链路层，也可以说在网络层）。下面来具体分析：</p>
+<p>1、客户端浏览器通过DNS解析到<a href="http://www.baidu.com的IP地址220.181.27.48，通过这个IP地址找到客户端到服务器的路径。客户端浏览器发起一个HTTP会话到220.161.27.48，然后通过TCP进行封装数据包，输入到网络层。" target="_blank" rel="noopener">www.baidu.com的IP地址220.181.27.48，通过这个IP地址找到客户端到服务器的路径。客户端浏览器发起一个HTTP会话到220.161.27.48，然后通过TCP进行封装数据包，输入到网络层。</a></p>
+<p>2、在客户端的传输层，把HTTP会话请求分成报文段，添加源和目的端口，如服务器使用80端口监听客户端的请求，客户端由系统随机选择一个端口如5000，与服务器进行交换，服务器把相应的请求返回给客户端的5000端口。然后使用IP层的IP地址查找目的端。</p>
+<p>3、客户端的网络层不用关心应用层或者传输层的东西，主要做的是通过查找路由表确定如何到达服务器，期间可能经过多个路由器，这些都是由路由器来完成的工作，我不作过多的描述，无非就是通过查找路由表决定通过那个路径到达服务器。</p>
+<p>4、客户端的链路层，包通过链路层发送到路由器，通过邻居协议查找给定IP地址的MAC地址，然后发送ARP请求查找目的地址，如果得到回应后就可以使用ARP的请求应答交换的IP数据包现在就可以传输了，然后发送IP数据包到达服务器的地址。</p>
+<h2 id="OSI、TCP-IP、五层协议栈"><a href="#OSI、TCP-IP、五层协议栈" class="headerlink" title="OSI、TCP/IP、五层协议栈"></a>OSI、TCP/IP、五层协议栈</h2><p>OSI（7层）： 物理层，数据链路层，网络层，传输层，会话层，表示层，应用层</p>
+<p>TCP/IP（4层）：网络接口层，网际层（IP），传输层，应用层</p>
+<p>五层：物理层，数据链路层，网络层，传输层，应用层</p>
+<h2 id="网络体系结构"><a href="#网络体系结构" class="headerlink" title="网络体系结构"></a>网络体系结构</h2><p>五层协议体系架构：</p>
+<ul>
+<li>应用层：通过应用进程间的交互来完成特定网络应用</li>
+<li>运输层：负责向两个主机中进程之间的通信提供通用的数据传输服务</li>
+<li>网络层：负责为分组交换网上的不同主机提供通信服务</li>
+<li>数据链路层：在两个相邻结点之间传送数据时，数据链路层将网络层交下来的IP数据报组装成帧，在两个相邻结点间的链路上传送帧。每一帧包括数据和必要的控制信息（同步、地址、差错控制）</li>
+<li>物理层：比特 ，考虑用多大的电压代表1或0，以及接收方如何识别出发送方所发送的比特</li>
+</ul>
+<h2 id="协议栈常用协议"><a href="#协议栈常用协议" class="headerlink" title="协议栈常用协议"></a>协议栈常用协议</h2><p>物理层：RJ45、CLOCK、IEEE802.3    （中继器，集线器，网关）<br>数据链路：PPP、FR、HDLC、VLAN、MAC  （网桥，交换机）<br>网络层：IP、ICMP、ARP、RARP、OSPF、IPX、RIP、IGRP、 （路由器）<br>传输层：TCP、UDP、SPX<br>会话层：NFS、SQL、NETBIOS、RPC<br>表示层：JPEG、MPEG、ASII<br>应用层：FTP、DNS、Telnet、SMTP、HTTP、WWW、NFS</p>
+<h2 id="协议栈每一层的作用"><a href="#协议栈每一层的作用" class="headerlink" title="协议栈每一层的作用"></a>协议栈每一层的作用</h2><ul>
+<li>物理层：通过媒介传输比特,确定机械及电气规范（比特Bit）</li>
+<li>数据链路层：将比特组装成帧和点到点的传递（帧Frame）</li>
+<li>网络层：负责数据包从源到宿的传递和网际互连（包PackeT）</li>
+<li>传输层：提供端到端的可靠报文传递和错误恢复（段Segment）</li>
+<li>会话层：建立、管理和终止会话（会话协议数据单元SPDU）</li>
+<li>表示层：对数据进行翻译、加密和压缩（表示协议数据单元PPDU）</li>
+<li>应用层：允许访问OSI环境的手段（应用协议数据单元APDU）</li>
+</ul>
+<h2 id="IP地址的分类"><a href="#IP地址的分类" class="headerlink" title="IP地址的分类"></a>IP地址的分类</h2><p>A类地址：以0开头，      第一个字节范围：0~127（1.0.0.0 - 126.255.255.255）；</p>
+<p>B类地址：以10开头，    第一个字节范围：128~191（128.0.0.0 - 191.255.255.255）；</p>
+<p>C类地址：以110开头，  第一个字节范围：192~223（192.0.0.0 - 223.255.255.255）；</p>
+<p>10.0.0.0—10.255.255.255， 172.16.0.0—172.31.255.255， 192.168.0.0—192.168.255.255。（Internet上保留地址用于内部）</p>
+<p>IP地址与子网掩码相与得到主机号</p>
+<h2 id="传输层协议与网络层协议的区别"><a href="#传输层协议与网络层协议的区别" class="headerlink" title="传输层协议与网络层协议的区别"></a>传输层协议与网络层协议的区别</h2><ul>
+<li>网络层提供的是主机之间的逻辑通信。</li>
+<li>传输层提供的是进程之间的逻辑通信。</li>
+</ul>
+<h2 id="TCP流量控制（针对点对点通信量的控制，是个端对端的问题）"><a href="#TCP流量控制（针对点对点通信量的控制，是个端对端的问题）" class="headerlink" title="TCP流量控制（针对点对点通信量的控制，是个端对端的问题）"></a>TCP流量控制（针对点对点通信量的控制，是个端对端的问题）</h2><p>TCP采用大小可变的滑动窗口进行流量控制，窗口大小的单位是字节。 </p>
+<p>流量控制：让发送方发送速率不要太快，要让接收方来得及接收。（一直） </p>
+<p>发送窗口在连接建立时由双方商定。但在通信的过程中，接收端可根据自己的资源情况，随时动态地调整对方的发送窗口上限值(可增大或减小)。 可以把窗口理解为缓冲区（但是有些窗口和缓冲区又不太一样）。如果没有这些“窗口”，那么TCP没发送一段数据后都必须等到接收端确认后才能发送下一段数据，这样做的话TCP传输的效率实在是太低了。解决的办法就是在发送端等待确认的时候继续发送数据。这就是窗口（缓冲区）引入的缘由。  </p>
+<h2 id="TCP拥塞控制"><a href="#TCP拥塞控制" class="headerlink" title="TCP拥塞控制"></a>TCP拥塞控制</h2><p>防止过多的数据注入到网络中，这样可以使网络中的路由器或链路不致过载。拥塞控制所要作的都有一个前提，就是网络能够承受现有的网络负荷。 </p>
+<h3 id="1-慢开始（慢启动"><a href="#1-慢开始（慢启动" class="headerlink" title="1.慢开始（慢启动)"></a>1.慢开始（慢启动)</h3><p>（1）在主机刚刚开始发送报文段时可先将拥塞窗口 cwnd 设置为一个最大报文段 MSS 的数值。<br>（2）在每收到一个对新的报文段的确认后，将拥塞窗口增加至多一个 MSS 的数值。<br>（3）用这样的方法逐步增大发送端的拥塞窗口 cwnd，可以使分组注入到网络的速率更加合理。</p>
+<p>慢开始门限的用法：<br>当cwnd&lt;ssthresh，使用慢开始方法<br>当cwnd&gt;ssthresh,使用拥塞避免<br>当cwnd=ssthresh，两种都可以使用。</p>
+<h3 id="2-拥塞避免—cwnd加1增长"><a href="#2-拥塞避免—cwnd加1增长" class="headerlink" title="2.拥塞避免—cwnd加1增长"></a>2.拥塞避免—cwnd加1增长</h3><p>思想：让拥塞窗口cwnd缓慢的增大，即每经过一个往返时间RTT，就把发送方的拥塞窗口+1，让拥塞串口cwnd按照线性规律缓慢增长</p>
+<h3 id="3-快重传"><a href="#3-快重传" class="headerlink" title="3.快重传"></a>3.快重传</h3><p>发送端只要一连收到三个重复的ACK就应立即重传丢失的报文段而不必继续等待为重传计时器的超时</p>
+<h3 id="4-快恢复"><a href="#4-快恢复" class="headerlink" title="4.快恢复"></a>4.快恢复</h3><p>发送方连续收到三个重复确认后，就执行“乘法减小”算法，把慢开始门限减半。<br>发送方认为网络没有发生拥塞，把cwnd的值设置为慢开始门限ssthresh减半后的数值，然后开始执行拥塞避免算法，使拥塞窗口缓慢地线性增大</p>
+<h2 id="TCP拥塞控制中的乘法减小（积式减少）和加法增大（和式增加）的意思？"><a href="#TCP拥塞控制中的乘法减小（积式减少）和加法增大（和式增加）的意思？" class="headerlink" title="TCP拥塞控制中的乘法减小（积式减少）和加法增大（和式增加）的意思？"></a>TCP拥塞控制中的乘法减小（积式减少）和加法增大（和式增加）的意思？</h2><p>1.乘法减小：无论是在慢开始阶段还是在拥塞避免阶段，只要出现超时，就要把慢开始门限ssthresh减半。当网络频繁拥塞时，ssthresh就下降得很快，可以迅速减少主机发送到网络中的分组数。<br>2.加法增大：执行拥塞避免算法后，使得拥塞窗口缓慢增大，以防止网络过早出现拥塞。</p>
+<h2 id="交换机、路由器、网关"><a href="#交换机、路由器、网关" class="headerlink" title="交换机、路由器、网关"></a>交换机、路由器、网关</h2><ol>
+<li><p>交换机：交换机工作于OSI参考模型的第二层，即数据链路层。交换机内部的CPU会在每个端口成功连接时，通过ARP得到它的MAC地址，保存成一张 ARP表。在今后的通讯中，发往该MAC地址的数据包将仅送往其对应的端口，而不是所有的端口。因此，交换机可用于划分数据链路层广播，即冲突域；但它不 能划分网络层广播，即广播域。</p>
+</li>
+<li><p>路由器：路由器（Router）是一种计算机网络设备，提供了路由与转送两种重要机制，可以决定数据包从来源端到目的端所经过 的路由路径（host到host之间的传输路径），这个过程称为路由；将路由器输入端的数据包移送至适当的路由器输出端(在路由器内部进行)，这称为转 送。路由工作在OSI模型的第三层——即网络层，例如网际协议。</p>
+</li>
+</ol>
+<p>路由器的一个作用是连通不同的网络，另一个作用是选择信息传送的线路。 路由器与交换器的差别，路由器是属于OSI第三层的产品，交换器是OSI第二层的产品(这里特指二层交换机)。</p>
+<ol start="3">
+<li>网关：网关（Gateway），网关顾名思义就是连接两个网络的设备，区别于路由器（由于历史的原因，许多有关TCP/IP 的文献曾经把网络层使用的路由器（Router）称为网关，在今天很多局域网采用都是路由来接入网络，因此现在通常指的网关就是路由器的IP），经常在家 庭中或者小型企业网络中使用，用于连接局域网和Internet。 网关也经常指把一种协议转成另一种协议的设备，比如语音网关。</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+	
+    
+	
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    殷彤
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="http://ytsjh.top/2019/08/16/计算机网络复习/" title="计算机网络复习">http://ytsjh.top/2019/08/16/计算机网络复习/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/计算机网络/" rel="tag"># 计算机网络</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/15/猿辅导面经/" rel="next" title="猿辅导面经">
+                <i class="fa fa-chevron-left"></i> 猿辅导面经
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NTA2MC8yMTU3Nw=="></div>
+    </div>
+
+  
+
+
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/yt.jpg" alt="殷彤">
+            
+              <p class="site-author-name" itemprop="name">殷彤</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/YTTong" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="791383829@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://youtube.com" target="_blank" title="YouTube">
+                      
+                        <i class="fa fa-fw fa-youtube"></i>YouTube</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#计算机网络"><span class="nav-number">1.</span> <span class="nav-text">计算机网络</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTPS和HTTP的区别"><span class="nav-number">1.1.</span> <span class="nav-text">HTTPS和HTTP的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP-6个状态码"><span class="nav-number">1.2.</span> <span class="nav-text">HTTP 6个状态码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#临时响应"><span class="nav-number">1.2.1.</span> <span class="nav-text">临时响应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#成功"><span class="nav-number">1.2.2.</span> <span class="nav-text">成功</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重定向"><span class="nav-number">1.2.3.</span> <span class="nav-text">重定向</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#请求错误"><span class="nav-number">1.2.4.</span> <span class="nav-text">请求错误</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务器错误"><span class="nav-number">1.2.5.</span> <span class="nav-text">服务器错误</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP请求头有哪些字段"><span class="nav-number">1.3.</span> <span class="nav-text">HTTP请求头有哪些字段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP保证可靠传输"><span class="nav-number">1.4.</span> <span class="nav-text">TCP保证可靠传输</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三次握手和四次挥手"><span class="nav-number">1.5.</span> <span class="nav-text">三次握手和四次挥手</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#三次握手"><span class="nav-number">1.5.1.</span> <span class="nav-text">三次握手</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四次挥手"><span class="nav-number">1.5.2.</span> <span class="nav-text">四次挥手</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么不是两次，或者四次"><span class="nav-number">1.5.3.</span> <span class="nav-text">为什么不是两次，或者四次</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么A要先进入TINE-WAIT，等待2MSL时间才进入CLOSED"><span class="nav-number">1.5.4.</span> <span class="nav-text">为什么A要先进入TINE-WAIT，等待2MSL时间才进入CLOSED</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如果客户端不断的发送请求连接会怎样"><span class="nav-number">1.6.</span> <span class="nav-text">如果客户端不断的发送请求连接会怎样?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP和UDP的区别"><span class="nav-number">1.7.</span> <span class="nav-text">TCP和UDP的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP和UDP常用协议"><span class="nav-number">1.8.</span> <span class="nav-text">TCP和UDP常用协议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络-ip-tcp-http最大的差别"><span class="nav-number">1.9.</span> <span class="nav-text">网络 ip tcp http最大的差别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从输入网址到获取页面的过程"><span class="nav-number">1.10.</span> <span class="nav-text">从输入网址到获取页面的过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在浏览器中输入-www-baidu-com-后执行的全部过程"><span class="nav-number">1.11.</span> <span class="nav-text">在浏览器中输入 www.baidu.com 后执行的全部过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OSI、TCP-IP、五层协议栈"><span class="nav-number">1.12.</span> <span class="nav-text">OSI、TCP/IP、五层协议栈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络体系结构"><span class="nav-number">1.13.</span> <span class="nav-text">网络体系结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#协议栈常用协议"><span class="nav-number">1.14.</span> <span class="nav-text">协议栈常用协议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#协议栈每一层的作用"><span class="nav-number">1.15.</span> <span class="nav-text">协议栈每一层的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IP地址的分类"><span class="nav-number">1.16.</span> <span class="nav-text">IP地址的分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#传输层协议与网络层协议的区别"><span class="nav-number">1.17.</span> <span class="nav-text">传输层协议与网络层协议的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP流量控制（针对点对点通信量的控制，是个端对端的问题）"><span class="nav-number">1.18.</span> <span class="nav-text">TCP流量控制（针对点对点通信量的控制，是个端对端的问题）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP拥塞控制"><span class="nav-number">1.19.</span> <span class="nav-text">TCP拥塞控制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-慢开始（慢启动"><span class="nav-number">1.19.1.</span> <span class="nav-text">1.慢开始（慢启动)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-拥塞避免—cwnd加1增长"><span class="nav-number">1.19.2.</span> <span class="nav-text">2.拥塞避免—cwnd加1增长</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-快重传"><span class="nav-number">1.19.3.</span> <span class="nav-text">3.快重传</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-快恢复"><span class="nav-number">1.19.4.</span> <span class="nav-text">4.快恢复</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP拥塞控制中的乘法减小（积式减少）和加法增大（和式增加）的意思？"><span class="nav-number">1.20.</span> <span class="nav-text">TCP拥塞控制中的乘法减小（积式减少）和加法增大（和式增加）的意思？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#交换机、路由器、网关"><span class="nav-number">1.21.</span> <span class="nav-text">交换机、路由器、网关</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">true</span>
+
+  
+</div>
+
+<!--
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+-->
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
